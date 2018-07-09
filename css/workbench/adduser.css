@@ -48,8 +48,12 @@
     font-size: 12px;
     border: 1px solid #797979;
 }
+.form-section>div>div{margin-bottom: 10px}
 
-.manage-wrap {
+/*----------bootstrap 覆盖----------*/
+.form-group>label{width: 4.5em;}
+
+/* .manage-wrap {
     white-space: nowrap;
     margin-left: 30px;
     margin-bottom: 20px;
@@ -83,14 +87,8 @@
 .content .wid-5 {
     width: 50%;
 }
-.service-wrap label {
-    font-weight: normal;
-}
 
 .content input,.content select,.content textarea {
     padding-left: 5px;
 }
-
-.service-wrap {
-    margin-bottom: 20px;
-}
+ */

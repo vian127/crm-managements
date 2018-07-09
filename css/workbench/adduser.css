@@ -9,7 +9,6 @@
     min-width: 1080px;
     white-space: nowrap;
 }
-
 .content {
     min-width: 980px;
     min-height: 600px;
@@ -50,20 +49,48 @@
     border: 1px solid #797979;
 }
 
-/* .manage-wrap {
+.manage-wrap {
     white-space: nowrap;
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
 
 .manage-wrap label {
-    width: 40%;
+    width: 30%;
     text-align: right;
     margin-left: -30px;
     font-weight: normal;
+    padding-right: 5px;
 }
 
 .manage-wrap input {
-    width: 60%;
+    width: 70%;
+    padding-left: 5px;
 }
-.position {
-    width: 60%;
-} */
+
+ .manage-wrap .position {
+    width: 70%;
+}
+
+.content .wid-3 {
+    width: 30%;
+}
+
+.content .wid-4 {
+    width: 40%;
+}
+
+.content .wid-5 {
+    width: 50%;
+}
+.service-wrap label {
+    font-weight: normal;
+}
+
+.content input,.content select,.content textarea {
+    padding-left: 5px;
+}
+
+.service-wrap {
+    margin-bottom: 20px;
+}

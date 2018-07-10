@@ -515,27 +515,26 @@
       </div>
       <!-- 内容 -->
       <div class="content" id='app'>
-        <div class="row">
-          <div class="col-md-12" align='right'>
-            <button type='button' class='btn btn-default btn-save'>保存</button>
-            <button type='button' class='btn btn-default btn-close'>关闭</button>
-          </div>
-          <div class='col-md-12'>
-            <button class='open'></button>
-            <span>管理信息</span>
-          </div>
+        <div class="container-fluid form-inline">
+            <div class="col-md-12" align='right'>
+              <button type='button' class='btn btn-primary btn-save'>保存</button>
+              <button type='button' class='btn btn-primary btn-close'>关闭</button>
+            </div>
+            <div class='col-md-12'>
+              <button class='open'></button>
+              <label class='normal-height'>管理信息</label>
+            </div>
 
-          <div class="user-wrap">
-            <div class="container-fluid form-inline form-section">
+            <div class="user-wrap form-section">
               <div class="row">
                 <div class='col-md-12'>
                   <div class="form-group col-md-4">
                     <label for="">姓名</label>
                     <input type="text" class="form-control">
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-4 normal-height">
                     <label for="">所属客户</label>
-                    <a href="javascript:;" class="form-control">上海摹雪服装有限公司</a>
+                    <a href="javascript:;">上海摹雪服装有限公司</a>
                   </div>
                   <div class="form-group col-md-4">
                     <div>
@@ -604,14 +603,12 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class='col-md-12'>
-            <button class='open'></button>
-            <span>管理信息</span>
-          </div>
-          <div class="service-wrap">
-            <div class="container-fluid form-inline">
+            <div class='col-md-12'>
+              <button class='open'></button>
+              <label class='normal-height'>管理信息</label>
+            </div>
+            <div class="service-wrap form-section">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group col-md-3">
@@ -638,7 +635,7 @@
                 <div class="col-md-12">
                   <div class="form-group col-md-2">
                     <label for="">多产品</label>
-                    <input type="checkbox" class="form-control">
+                    <input type="checkbox">
                     <span for="">APM</span>
                   </div>
                   <div class="form-group col-md-2">
@@ -677,7 +674,7 @@
                 <div class="col-md-12">
                   <div class="form-group col-md-2">
                     <label for=""></label>
-                    <input type="checkbox" class="form-control">
+                    <input type="checkbox">
                     <span for="">云图</span>
                   </div>
                   <div class="form-group col-md-2">
@@ -715,28 +712,26 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+         
 
-        <div class='col-md-12'>
-          <button class='open'></button>
-          <span>用户管理信息</span>
-        </div>
-        <div class="manage-wrap">
-          <div class="container-fluid form-inline">
+          <div class='col-md-12'>
+            <button class='open'></button>
+            <label class='normal-height'>用户管理信息</label>
+          </div>
+          <div class="manage-wrap form-section">
             <div class="row">
               <div class="col-md-12">
                 <div class='form-group col-md-4'>
-                  <label for="">用户来源</label>
+                  <label for="" class='wid-85'>用户来源</label>
                   <input type="text" class="form-control" value='张三' disabled="disabled">
                 </div>
                 <div class='form-group col-md-4'>
-                  <label for="">创建人</label>
+                  <label for="" class='wid-85'>创建人</label>
                   <input type="text" class="form-control" value='张三' disabled="disabled">
                 </div>
                 <div class='form-group col-md-4'>
                   <div>
-                    <label for="">最后修改人</label>
+                    <label for="" class='wid-85'>最后修改人</label>
                     <input type="text" class="form-control" value='张三' disabled="disabled">
                   </div>
                 </div>
@@ -763,82 +758,84 @@
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <table class="table table-condensed table-bordered table-hover">
-            <thead>
-              <tr class="warning">
-                <th>账号</th>
-                <th>类型</th>
-                <th>手机号</th>
-                <th>未登录天数</th>
-                <th>注册时间</th>
-                <th>最后登录时间</th>
-                <th>修改密码时间</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr align='center' v-for='item in list'>
-                <td>{{ item.account }}</td>
-                <td>{{ item.stage }}</td>
-                <td>{{ item.phone }}</td>
-                <td>{{ item.unline }}</td>
-                <td>{{ item.register }}</td>
-                <td>{{ item.lastlogin}}</td>
-                <td>{{ item.code }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="service-wrap clearfix">
+       
         <div class='col-md-12'>
           <button class='open'></button>
-          <span>账户信息</span>
+          <label class='normal-height'>账户信息</label>
         </div>
         <div>
+        <table class="table table-condensed table-bordered table-hover">
+          <thead>
+            <tr class="warning">
+              <th>账号</th>
+              <th>类型</th>
+              <th>手机号</th>
+              <th>未登录天数</th>
+              <th>注册时间</th>
+              <th>最后登录时间</th>
+              <th>修改密码时间</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr align='center' v-for='item in list'>
+              <td>{{ item.account }}</td>
+              <td>{{ item.stage }}</td>
+              <td>{{ item.phone }}</td>
+              <td>{{ item.unline }}</td>
+              <td>{{ item.register }}</td>
+              <td>{{ item.lastlogin}}</td>
+              <td>{{ item.code }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <div class='col-md-12'>
+          <button class='open'></button>
+          <label class='normal-height'>账户信息</label>
+        </div>
+        <div class="account-info">
           <table class="table table-condensed table-bordered table-hover">
             <thead>
               <tr class="warning">
-                <th style='width: 5%;'>创建日期</th>
+                <th>创建日期</th>
                 <th>服务对象</th>
+                <th>手机号</th>
                 <th>服务方式</th>
+                <th>联络类型</th>
                 <th>联络结果</th>
-                <th>服务类型</th>
+                <th>用户印象</th>
                 <th>服务内容</th>
-                <th>预约下次联络时间</th>
-                <th>备注</th>
+                <th>服务详情</th>
+                <th>联络人</th>
               </tr>
             </thead>
             <tbody>
               <tr align='center' v-for='item in record'>
-                <td style='width: 5%;'>{{ item.created }}</td>
+                <td>{{ item.created }}</td>
                 <td>{{ item.session }}</td>
-                <td>{{ item.relation }}</td>
+                <td>{{ item.tel }}</td>
+                <td>{{ item.selation }}</td>
+                <td>{{ item.stage }}</td>
                 <td>{{ item.result }}</td>
-                <td>{{ item.stage}}</td>
-                <td>{{ item.content}}</td>
-                <td>{{ item.order}}</td>
-                <td>{{ item.remark }}</td>
+                <td>{{ item.impress }}</td>
+                <td>{{ item.content }}</td>
+                <td>{{ item.detail }}</td>
+                <td>{{ item.contact }}</td>
               </tr>
             </tbody>
           </table>
+          <div id="test1"></div>
         </div>
       </div>
+      </div>
+      <footer>
+        <p>Copyright &copy; 2016.Company name All rights reserved.More Templates
+          <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
+          <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+        </p>
+      </footer>
+      <!-- /. PAGE WRAPPER  -->
     </div>
-  </div>
-  </div>
-  </div>
-
-  <footer>
-    <p>Copyright &copy; 2016.Company name All rights reserved.More Templates
-      <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
-      <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-    </p>
-  </footer>
-  <!-- /. PAGE WRAPPER  -->
-  </div>
   </div>
   <!-- /. WRAPPER  -->
   <!-- JS Scripts-->

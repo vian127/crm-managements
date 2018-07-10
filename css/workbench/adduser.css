@@ -1,94 +1,11 @@
 @charset 'UTF-8';
-.header-title {
-    padding-top: 0px;
-    height: 30px;
-    border-bottom: 1px solid #797979;
-}
 
-#page-wrapper {
-    min-width: 1080px;
-    white-space: nowrap;
-}
-.content {
-    min-width: 980px;
-    min-height: 600px;
-}
 
-.open {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #797979;
-    border-radius: 3px;
-}
-
-.open::after {
-    content: '—';
-    position: relative;
-    top: -2px;
-    left: 0;
-    color: #797979;
-}
-
-.control {
-    padding: 10px 0;
-}
-
-.btn-wrap {
-    text-align: right;
-}
-
-.btn-save,
-.btn-close {
-    width: 70px;
-    height: 28px;
-    line-height: 26px;
-    text-align: center;
-    padding: 0 10px;
-    margin-right: 5px;
-    font-size: 12px;
-    border: 1px solid #797979;
-}
+.open {width: 20px;height: 20px;border: 1px solid #797979;border-radius: 3px;}
+.open::after {content: '—';position: relative;top: -2px;left: 0;color: #797979;}
+.normal-height {height: 34px;line-height:34px;}
 .form-section>div>div{margin-bottom: 10px}
 
 /*----------bootstrap 覆盖----------*/
 .form-group>label{width: 4.5em;}
 
-/* .manage-wrap {
-    white-space: nowrap;
-    margin-left: 30px;
-    margin-bottom: 20px;
-}
-
-.manage-wrap label {
-    width: 30%;
-    text-align: right;
-    margin-left: -30px;
-    font-weight: normal;
-    padding-right: 5px;
-}
-
-.manage-wrap input {
-    width: 70%;
-    padding-left: 5px;
-}
-
- .manage-wrap .position {
-    width: 70%;
-}
-
-.content .wid-3 {
-    width: 30%;
-}
-
-.content .wid-4 {
-    width: 40%;
-}
-
-.content .wid-5 {
-    width: 50%;
-}
-
-.content input,.content select,.content textarea {
-    padding-left: 5px;
-}
- */

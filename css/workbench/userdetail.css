@@ -1,7 +1,13 @@
 .form-section>div>div{margin-bottom: 10px}
 
+.form-inline .checked-list{width: 185px;}
 
+.checked-list>li{display: inline-block;display: 4px 8px;background-color: }
+
+.filter-div{display: none;z-index: 10;position: absolute;left: 80px;top: 40px;padding: 10px;background-color: #fff;border:1px solid #aaa;}
 
 /*----------bootstrap 覆盖----------*/
-.form-group>label{width: 4.5em;}
+.table{background-color: #ededed}
+.table>thead{background-color: #cce1f5;}
+.form-group>label{width: 4.5em;vertical-align:middle;}
 

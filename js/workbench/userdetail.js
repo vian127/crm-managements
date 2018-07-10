@@ -1,12 +1,13 @@
 require.config({
   paths: {
     'ztree-core':'lib/ztree/jquery.ztree.core.min',
-    'ztree-excheck':'lib/ztree/jquery.ztree.excheck.min'
+    'ztree-excheck':'lib/ztree/jquery.ztree.excheck.min',
+    'ztree-exhide':'lib/ztree/jquery.ztree.exhide.min',
   },
 
   shim: {
     'ztree-excheck':{
-      deps:['css!lib/ztree/zTreeStyle.css','jquery','ztree-core']
+      deps:['css!lib/ztree/zTreeStyle.css','jquery','ztree-core','ztree-exhide']
     }
   }
 });
@@ -29,31 +30,21 @@ require(['vue','ztree-excheck'], function (Vue) {
               }
           })
       });
-
+    // 共用对象
     var def={
       trees:{
-        hangye:[
-          { id:1, pId:0, name:'随意勾选 1', open:true},
-          { id:11, pId:1, name:'随意勾选 1-1', open:true},
-          { id:111, pId:11, name:'随意勾选 1-1-1'},
-          { id:112, pId:11, name:'随意勾选 1-1-2'},
-          { id:12, pId:1, name:'随意勾选 1-2', open:true},
-          { id:121, pId:12, name:'随意勾选 1-2-1'},
-          { id:122, pId:12, name:'随意勾选 1-2-2'},
-          { id:2, pId:0, name:'随意勾选 2', checked:true, open:true},
-          { id:21, pId:2, name:'随意勾选 2-1'},
-          { id:22, pId:2, name:'随意勾选 2-2', open:true},
-          { id:221, pId:22, name:'随意勾选 2-2-1', checked:true},
-          { id:222, pId:22, name:'随意勾选 2-2-2'},
-          { id:23, pId:2, name:'随意勾选 2-3'}
+        industry:[
+          { id:1, pId:0, name:'材质', open:false},
+          { id:11, pId:1, name:'棉麻'},
+          { id:12, pId:1, name:'丝绸'},
+          { id:2, pId:0, name:'配饰', open:false},
+          { id:21, pId:2, name:'手链'},
+          { id:22, pId:2, name:'戒指'},
         ],
-
-      }
-    };
-    
-    setTrees();
-    function setTrees(){                                          // 树结构
-      var setting = {
+        is_industry_set:false,
+        is_industry_show:false,
+      },
+      trees_setting:{
         check: {
           enable: true
         },
@@ -62,14 +53,81 @@ require(['vue','ztree-excheck'], function (Vue) {
             enable: true
           }
         }
-      };
-      $('.js-trees-ele').each(function(){
-        var $self=$(this);
-        var key=$self.attr('data-key') || '';
-        if(key!=''){
-          $.fn.zTree.init($self, setting, def.trees[key]);
+      }
+    };
+    
+
+
+
+    // 事件绑定
+
+    bindFunc();
+
+
+
+
+
+
+
+
+
+
+    function bindFunc(){
+      // 点击获取焦点
+      $('.js-checked-list').on('click',function(e){
+        var $self=$(this),tag_ele=$self.siblings('.js-filter-div');
+        var id=tag_ele.attr('data-id');
+        if(def.trees[id]==undefined){
+          var key=$self.attr('data-key') || '';
+          if(key!=''){
+            $.fn.zTree.init(tag_ele.children('.js-trees-ele'), def.trees_setting, def.trees[key]);
+            def.trees[id]=$.fn.zTree.getZTreeObj(id);
+          }
         }
+        tag_ele.show();
+        e.stopPropagation();
       });
+
+
+      // 隐藏下拉选择层
+      $('.js-filter-div').on('click',function(e){
+        e.stopPropagation();
+      });
+      $('#page-wrapper').on('click',function(){
+        $('.js-filter-div').hide();
+      });
+      
+      // 搜索筛选项
+      $('.js-search-trees').on('keyup',function(e){
+        var id=$(this).parent().attr('data-id') || '';
+        var txt=$(this).val() || '';
+        var ztree_obj=def.trees[id];
+        var hide_obj=ztree_obj.getNodesByParamFuzzy('name',txt);
+        if(hide_obj.length>0){
+          ztree_obj.hideNodes(ztree_obj.getNodes());
+          ztree_obj.showNodes(hide_obj);
+        }else{
+          ztree_obj.showNodes(ztree_obj.getNodes());
+        }
+          
+      });
+      // 确定筛选项
+      $('.js-add-checked').on('click',function(){
+        var id=$(this).parents('.js-filter-div').attr('data-id') || '';
+        var ztree_obj=def.trees[id];
+        $(this).parents('.js-filter-div').hide();
+      });
+      // 取消筛选项
+      $('.js-cancel-checked').on('click',function(){
+        $(this).parents('.js-filter-div').hide();
+      });
+    }
+    // $.fn.zTree.init($('.js-trees-ele'), def.setting, def.trees['industry']);
+
+    function setTrees(){                                          // 统一生成树结构
+      
+
+
     }
   })
 

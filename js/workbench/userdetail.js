@@ -27,16 +27,62 @@ require(['vue','ztree-excheck'], function (Vue) {
                     {id: 7,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
                     {id: 8,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'}
                   ],
-            record:[
-              {id:1,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:2,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:3,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:4,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:5,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:6,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:7,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-              {id:8,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'}
-              ], 
+              record:[
+                    {id:1,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:2,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:3,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:4,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:5,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:6,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:7,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                    {id:8,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'}
+                ], 
+
+                datas:{
+                  pro:[
+                    {id:1,name:'上海'},
+                    {id:2,name:'北京'},
+                    {id:3,name:'广州'},
+                    {id:4,name:'深圳'}
+                  ],
+                  city:[
+                    {id:1,name:'黄石'},
+                    {id:2,name:'武汉'},
+                    {id:3,name:'随州'},
+                    {id:4,name:'黄冈'}
+                  ]
+                },
+               
+              material:{
+                    account:'333',
+                    id:'33333333',
+                    brand:'sdff',
+                    company:'33',  
+                    email:'5555',
+                    pro:'1',
+                    city:'1',
+                    district:'',
+                    addr:'1',
+                    telephone:'',
+                    genre:'1',
+
+                    trade:'1',
+                    sex:'1',
+                    pattern:'1',
+                    single:'1',
+                    season:'1',
+                    texture:'1',
+                    craft:'1',
+                    stage:'1',
+                    state:'1', 
+                    invoice:'1',
+                    limit:'',
+              }
+            },
+            methods:{
+              infoDetail:function(id){            //根据ID查看详情
+               window.location.href='../../views/workbench/adduser.html';
+              }
             }
           })
 
@@ -58,6 +104,13 @@ require(['vue','ztree-excheck'], function (Vue) {
           });
       }
      page();
+
+     $('.basic-sure').on('click',function(){
+      var count = vm.material;
+      console.log(count);
+  })
+
+
       });
     // 共用对象
     var def={
@@ -159,10 +212,6 @@ require(['vue','ztree-excheck'], function (Vue) {
 
     }
 
-    $('.basic-sure').on('click',function(){
-     const len= $('input').length;
-     console.log(len)
-     })
-  })
+})
 
       

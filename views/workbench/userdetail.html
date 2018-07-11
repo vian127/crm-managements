@@ -515,47 +515,47 @@
             <div class='col-md-12'>
               <div class="form-group col-md-4">
                 <label for="">主账号</label>
-                <input type="text" name='account' class="form-control">
+                <input type="text" v-model='material.account' class="form-control">
               </div>
               <div class="form-group col-md-4">
                 <label for="">客户id</label>
-                <input name='account' type="text" class="form-control">
+                <input type="text" v-model='material.id' class="form-control">
               </div>
               <div class="form-group col-md-4">
                 <label for="">品牌名称</label>
-                <input type="text" class="form-control">
+                <input type="text" v-model='material.brand' class="form-control">
               </div>
             </div>
             <div class='col-md-12'>
               <div class="form-group col-md-4">
                 <label for="">公司名称</label>
-                <input type="text" class="form-control">
+                <input type="text" v-model='material.company' class="form-control">
               </div>
               <div class="form-group col-md-4">
                 <label for="">邮箱</label>
-                <input type="text" class="form-control">
+                <input type="text" v-model='material.email' class="form-control">
               </div>
             </div>
             <div class='col-md-12'>
               <div class="form-group col-md-4">
                 <label>城市</label>
-                <select name="checks" id="" class="form-control">
-                  <option value="">省</option>
+                <select name="checks" id="" class="form-control" v-model='material.pro'>
+                  <option :value='item.id' v-for='item in datas.pro'>{{ item.name }}</option>
                 </select>
-                <select name="checks" id="" class="form-control">
-                  <option value="">市</option>
+                <select name="checks" id="" class="form-control" v-model='material.city'>
+                  <option :value="item.id" v-for='item in datas.city'>{{ item.name }}</option>
                 </select>
-                <select name="checks" id="" class="form-control">
+                <select name="checks" id="" class="form-control" v-model='material.district'>
                   <option value="">区</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
                 <label>地址</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" v-model='material.addr'>
               </div>
               <div class="form-group col-md-4">
                 <label>固定电话</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" v-model='material.telephone'>
               </div>
             </div>
           </div>
@@ -563,7 +563,7 @@
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <label for="formele1">企业类型</label>
-                <select name="checks" id="formele1" class="form-control">
+                <select name="checks" id="formele1" class="form-control" v-model='material.genre'>
                   <option value="1">原料商</option>
                   <option value="2">辅料商</option>
                   <option value="3">面料商（开发商）</option>
@@ -573,8 +573,8 @@
               <div class="form-group col-md-4">
                 <label for="formele2">行业类型</label>
                 <ul class="form-control checked-list js-checked-list" data-key='industry'>
-                    <li>a</li>
-                    <li>b</li>
+                  <li>a</li>
+                  <li>b</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-industry">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -591,17 +591,17 @@
 
               <div class="form-group col-md-4">
                 <label for="formele3">贸易类型</label>
-                <select name="checks" id="formele3" class='form-control'>
+                <select name="checks" id="formele3" class='form-control' v-model='material.trade'>
                   <option value="1">内销</option>
-                  <option value="1">外销</option>
-                  <option value="1">内外销</option>
+                  <option value="2">外销</option>
+                  <option value="3">内外销</option>
                 </select>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <label for="formele3">性别</label>
-                <select name="checks" id="formele3" class='form-control'>
+                <select name="checks" id="formele3" class='form-control' v-model='material.sex'>
                   <option value="1">童装</option>
                   <option value="1">企业类型</option>
                   <option value="1">企业类型</option>
@@ -609,7 +609,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="">风格</label>
-                <select name="checks" id="" class='form-control'>
+                <select name="checks" id="" class='form-control' v-model='material.pattern'>
                   <option value="1">童装</option>
                   <option value="1">企业类型</option>
                   <option value="1">企业类型</option>
@@ -617,7 +617,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="">重点单品</label>
-                <select name="checks" id="" class='form-control'>
+                <select name="checks" id="" class='form-control' v-model='material.single'>
                   <option value="1">童装</option>
                   <option value="1">企业类型</option>
                   <option value="1">企业类型</option>
@@ -627,7 +627,7 @@
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <label for="">重点开发季节</label>
-                <select name="checks" id="" class='form-control'>
+                <select name="checks" id="" class='form-control' v-model='material.season'>
                   <option value="1">童装</option>
                   <option value="1">企业类型</option>
                   <option value="1">企业类型</option>
@@ -635,18 +635,18 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="">材质</label>
-                <select name="" id="" class='form-control'>
+                <select name="" id="" class='form-control' v-model='material.texture'>
                   <option value="1">童装</option>
-                  <option value="1">企业类型</option>
-                  <option value="1">企业类型</option>
+                  <option value="2">企业类型</option>
+                  <option value="3">企业类型</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
                 <label for="">面料工艺</label>
-                <select name="" id="" class='form-control'>
+                <select name="" id="" class='form-control' v-maodel='material.craft'>
                   <option value="1">童装</option>
-                  <option value="1">企业类型</option>
-                  <option value="1">企业类型</option>
+                  <option value="2">企业类型</option>
+                  <option value="3">企业类型</option>
                 </select>
               </div>
             </div>
@@ -655,15 +655,15 @@
             <div class="col-md-12">
               <div class="form-group col-md-3">
                 <label for="">服务阶段</label>
-                <select name="" id="" class='form-control'>
-                  <option value="">新客期</option>
-                  <option value="">服务期</option>
-                  <option value="">流转期</option>
+                <select name="" id="" class='form-control' v-model='material.stage'>
+                  <option value="1">新客期</option>
+                  <option value="2">服务期</option>
+                  <option value="3">流转期</option>
                 </select>
               </div>
               <div class="form-group col-md-3">
                 <label for="">客户情况</label>
-                <select name="" id="" class='form-control'>
+                <select name="" id="" class='form-control' v-model='material.state'>
                   <option value="1">Z(正常)</option>
                   <option value="2">Y(疑难客户)</option>
                   <option value="3">Z(长期不登录客户)</option>
@@ -673,17 +673,17 @@
               </div>
               <div class="form-group col-md-3">
                 <label for="">发票项</label>
-                <select name="" id="" class='form-control'>
-                  <option value="">提前开票</option>
-                  <option value="">暂缓开票</option>
-                  <option value="">普通发票</option>
-                  <option value="">专用发票</option>
-                  <option value="">不需要发票</option>
+                <select name="" id="" class='form-control' v-model='material.invoice'>
+                  <option value="1">提前开票</option>
+                  <option value="2">暂缓开票</option>
+                  <option value="3">普通发票</option>
+                  <option value="4">专用发票</option>
+                  <option value="5">不需要发票</option>
                 </select>
               </div>
               <div class="form-group col-md-3">
                 <label for="">网站权限</label>
-                <input type="text" value='全网' class="form-control">
+                <input type="text" value='全网' class="form-control" v-model='material.limit'>
               </div>
             </div>
             <div class="col-md-12">
@@ -751,7 +751,9 @@
                   <td :data-id='item.id'>
                     <input type="radio" name='duty' class='info-single'>
                   </td>
-                  <td>{{ item.name }}</td>
+                  <td>
+                    <button @click='infoDetail(item.id)'> {{ item.name }}</button>
+                  </td>
                   <td>{{ item.role }}</td>
                   <td>{{ item.position }}</td>
                   <td>{{ item.status }}</td>
@@ -767,7 +769,7 @@
               </tbody>
             </table>
             <div class="col-md-12">
-              <a href="./adduser.html" class='btn btn-primary'>+新增客户</a>
+              <a href="./adduser.html" class='btn btn-primary'>+新增用户</a>
             </div>
           </div>
           <div class="row">
@@ -966,17 +968,19 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='完成'>
-                <span>完成</span>
-              </div>
-              <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='缺税号'>
-                <span>缺税号</span>
-              </div>
-              <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='缺委托书'>
-                <span>缺委托书</span>
+              <div>
+                <div class="form-group col-md-2">
+                  <input type="checkbox" name='' value='完成'>
+                  <span>完成</span>
+                </div>
+                <div class="form-group col-md-2">
+                  <input type="checkbox" name='' value='缺税号'>
+                  <span>缺税号</span>
+                </div>
+                <div class="form-group col-md-2">
+                  <input type="checkbox" name='' value='缺委托书'>
+                  <span>缺委托书</span>
+                </div>
               </div>
             </div>
           </div>

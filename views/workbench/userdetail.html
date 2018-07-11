@@ -572,17 +572,23 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="formele2">行业类型</label>
-                <ul class="form-control checked-list">
-                  <li>a</li>
-                  <li>b</li>
+                <ul class="form-control checked-list js-checked-list" data-key='industry'>
+                    <li>a</li>
+                    <li>b</li>
                 </ul>
-                <div class="filter-div">
-                  <input type="text" placeholder="输入要搜索的文字" class='form-control'>
-                  <ul class="ztree js-trees-ele" data-key='hangye'>
+                <div class="filter-div js-filter-div" data-id="js-trees-industry">
+                  <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
+                  <ul class="ztree js-trees-ele" id="js-trees-industry">
 
                   </ul>
+                  <div class="text-right">
+                    <button class="btn btn-default btn-sm js-cancel-checked">取消</button>
+                    <button class="btn btn-primary btn-sm js-add-checked">确定</button>
+                  </div>
                 </div>
               </div>
+
+
               <div class="form-group col-md-4">
                 <label for="formele3">贸易类型</label>
                 <select name="checks" id="formele3" class='form-control'>
@@ -981,6 +987,7 @@
                   <input type="checkbox" name='' value='赠品项'>
                   <span>赠品项赠品</span>
                 </div>
+
                 <div class="form-group col-md-6">
                   <input type="checkbox" name='' value='更换地址/收件人信息'>
                   <span>更换收件地址/收件人信息</span>

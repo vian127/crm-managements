@@ -4,8 +4,7 @@
     COMMON  STYLES    
 ------------------------------------------------*/
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: #32C2CD url(../../images/common/bg-img.jpg) !important;
+    background-color: #32C2CD ;background-image: url(../../images/common/bg-img.jpg);
 }
 h1, .h1, h2, .h2, h3, .h3 {
 margin-top: 7px;

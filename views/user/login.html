@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>登录</title>
+		<meta charset="utf-8"/>
+		<!-- Bootstrap Styles-->
+		<link href="../../css/common/base.css" rel="stylesheet" />
+		<link href="../../css/lib/bootstrap.min.css" rel="stylesheet" />
+		<!-- FontAwesome Styles-->
+		<link href="../../css/common/font-awesome.css" rel="stylesheet" />
+		<!-- Google Fonts-->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+		<link href="../../css/common/common.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/user/login.css">
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="login-box">
+		      	<div class="login-wrap">
+			        <h3>CRM后台管理系统-登录</h3>
+			        <div class="input-group">
+			          	<span class="input-group-addon glyphicon glyphicon-user"><i class="icon_profile"></i></span>
+			          	<input type="text" class="form-control" name="sAccount" placeholder="用户名" autofocus>
+			        </div>
+			        <div class="input-group">
+			          	<span class="input-group-addon glyphicon glyphicon-lock"><i class="icon_key_alt"></i></span>
+			          	<input type="password" class="form-control" name="sPassword" placeholder="密码">
+			        </div>
+			        <div class="input-group">
+			          	<input type="text" class="form-control"  name="imgcode" placeholder="验证码">
+			        	<img src="/members/imgcaptcha/" onclick="this.src='/members/imgcaptcha/?'+Math.random()+'/';" alt="" style="height: 42px;" />
+			        </div>
+			        <div>
+			        	<a href="">忘记密码</a>
+			        	<p class="pull-right">没有账号，去<a href="">注册</a></p>
+			        </div>
+			        <button class="btn btn-primary btn-lg btn-block" type="button">登录</button>
+		      	</div>
+		    </div>
+		</div>
+	</body>
+</html>

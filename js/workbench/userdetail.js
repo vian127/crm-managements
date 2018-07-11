@@ -100,6 +100,11 @@ require(['vue','ztree-excheck'], function (Vue) {
         }
       });
     }
+
+    $('.basic-sure').on('click',function(){
+     const len= $('input').length;
+     console.log(len)
+     })
   })
 
-       
+      

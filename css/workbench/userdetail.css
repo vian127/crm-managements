@@ -1,6 +1,6 @@
 .form-section>div>div{margin-bottom: 10px}
 
-.form-inline .checked-list{width: 185px;}
+.form-inline .checked-list{max-width: 240px;}
 
 .checked-list>li{display: inline-block;display: 4px 8px;background-color: }
 

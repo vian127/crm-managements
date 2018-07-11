@@ -7,12 +7,15 @@ require.config({
 
   shim: {
     'ztree-excheck':{
-      deps:['css!lib/ztree/zTreeStyle.css','jquery','ztree-core','ztree-exhide']
+      deps:['css!lib/ztree/zTreeStyle.css','jquery','ztree-core']
+    },
+    'ztree-exhide':{
+      deps:['jquery','ztree-core']
     }
   }
 });
   
-require(['vue','ztree-excheck'], function (Vue) {
+require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
   $(function () {
       var vm = new Vue({
           el: '#app',
@@ -70,8 +73,47 @@ require(['vue','ztree-excheck'], function (Vue) {
           { id:21, pId:2, name:'手链'},
           { id:22, pId:2, name:'戒指'},
         ],
-        is_industry_set:false,
-        is_industry_show:false,
+        style:[
+          { id:1, pId:0, name:'流行', open:false},
+          { id:11, pId:1, name:'坎肩'},
+          { id:12, pId:1, name:'短袖'},
+          { id:2, pId:0, name:'经典', open:false},
+          { id:21, pId:2, name:'牛仔'},
+          { id:22, pId:2, name:'麦子'},
+        ],
+        single:[
+          { id:1, pId:0, name:'流行', open:false},
+          { id:11, pId:1, name:'坎肩'},
+          { id:12, pId:1, name:'短袖'},
+          { id:2, pId:0, name:'经典', open:false},
+          { id:21, pId:2, name:'牛仔'},
+          { id:22, pId:2, name:'麦子'},
+        ],
+        season:[
+          { id:1, pId:0, name:'流行', open:false},
+          { id:11, pId:1, name:'坎肩'},
+          { id:12, pId:1, name:'短袖'},
+          { id:2, pId:0, name:'经典', open:false},
+          { id:21, pId:2, name:'牛仔'},
+          { id:22, pId:2, name:'麦子'},
+        ],
+        material:[
+          { id:1, pId:0, name:'流行', open:false},
+          { id:11, pId:1, name:'坎肩'},
+          { id:12, pId:1, name:'短袖'},
+          { id:2, pId:0, name:'经典', open:false},
+          { id:21, pId:2, name:'牛仔'},
+          { id:22, pId:2, name:'麦子'},
+        ],
+        process:[
+          { id:1, pId:0, name:'流行', open:false},
+          { id:11, pId:1, name:'坎肩'},
+          { id:12, pId:1, name:'短袖'},
+          { id:2, pId:0, name:'经典', open:false},
+          { id:21, pId:2, name:'牛仔'},
+          { id:22, pId:2, name:'麦子'},
+        ],
+
       },
       trees_setting:{
         check: {
@@ -144,12 +186,31 @@ require(['vue','ztree-excheck'], function (Vue) {
       $('.js-add-checked').on('click',function(){
         var id=$(this).parents('.js-filter-div').attr('data-id') || '';
         var ztree_obj=def.trees[id];
+        var checked_obj=ztree_obj.getCheckedNodes();
         $(this).parents('.js-filter-div').hide();
+        setFilterDom($(this).parents('.js-filter-div').siblings('.js-checked-list'),checked_obj);
       });
       // 取消筛选项
       $('.js-cancel-checked').on('click',function(){
         $(this).parents('.js-filter-div').hide();
       });
+
+
+
+      function setFilterDom(tag,data){
+        var _html='';
+        data.forEach(function(item,index){
+          if(index==0){
+            _html+='<li>'+item.name+'</li>';
+          }else{
+            _html+=',<li>'+item.name+'</li>';
+          }
+          
+        });
+        console.log(tag)
+        tag.html(_html);
+      };
+
     }
     // $.fn.zTree.init($('.js-trees-ele'), def.setting, def.trees['industry']);
 

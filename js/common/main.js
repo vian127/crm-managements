@@ -4,8 +4,8 @@
     #porpuse    共用入口
 */
 require.config({
-  baseUrl: "file:///E:/myWorks/github/cooperation/crm-managements/js",
-  // baseUrl: "file:///E:/project/works/crm-product/js",
+  // baseUrl: "file:///E:/myWorks/github/cooperation/crm-managements/js",
+  baseUrl: "file:///E:/project/works/crm-product/js",
   urlArgs: "r=" + (new Date()).getTime(),
   // urlArgs:"t="+static_change_time,
   paths: {
@@ -62,7 +62,7 @@ require.config({
 
 
 
-require(["jquery", "general", "bootstrap", 'common','layui'], function (jquery, general) {
+require(["jquery", "general", "bootstrap", 'common'], function (jquery, general) {
   $(function () {
     var ids = [];
     $('tbody').on('change', '.checked-single', function () {

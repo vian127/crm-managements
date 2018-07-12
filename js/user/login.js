@@ -3,7 +3,7 @@
 	#date 		2018/07/12
     #porpuse    共用入口
 */
-require(['vue'],function(Vue){
+require(['vue','msg'],function(Vue,msg){
 	var app=new Vue({
 		el:'#app',
 		data(){
@@ -15,7 +15,9 @@ require(['vue'],function(Vue){
 					is_account:false,
 					is_password:false,
 					is_code:false,
-					msg:''
+					msg:'',
+					btntxt:'登录',
+					is_submitting:false
 				}
 			}
 		},
@@ -23,6 +25,8 @@ require(['vue'],function(Vue){
 			subFunc:function(e){
 				var tag=e.target;
 				var data=this.login_info;
+
+				if(data.is_submitting==true){return};
 				var txt='',p_ele=null,is_next=false;
 				data.is_account=false;
 				data.is_password=false;
@@ -37,7 +41,6 @@ require(['vue'],function(Vue){
 				}else if(data.password==''){
 					txt='请输入密码';
 					data.is_password=true;
-					console.log(2222)
 				}else if(data.password.length<6){
 					txt='密码至少6位字符';
 					data.is_password=true;
@@ -52,7 +55,16 @@ require(['vue'],function(Vue){
 				}
 
 				if(is_next==true){
+					data.is_submitting=true;
+					data.btntxt='登录中...';
 					console.log('当前登录数据：'+data);
+					
+					setTimeout(function(){
+						data.is_submitting=false;
+						data.btntxt='登录';
+						msg.msg({txt:'登录成功！'},1200);
+					},1000)
+					
 				}else{
 					data.msg=txt;
 				}

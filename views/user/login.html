@@ -32,14 +32,14 @@
 			        <div class="input-group">
 			        	<span class="input-group-addon glyphicon glyphicon-pencil"></span>
 			          	<input type="text" v-model="login_info.code" class="form-control code-area"  name="" maxlength="4" placeholder="验证码">
-			        	<img class="img-code" src="/members/imgcaptcha/" alt="code"/>
+			        	<img class="img-code" src="" alt="code"/>
 			        	<p v-text="login_info.msg" v-if="login_info.is_code"></p>
 			        </div>
 			        <div>
 			        	<a href="">忘记密码</a>
 			        	<p class="pull-right">没有账号？<a href="">立即注册</a></p>
 			        </div>
-			        <button class="btn btn-primary btn-lg btn-block" type="button" @click="subFunc">登录</button>
+			        <button class="btn btn-primary btn-lg btn-block" type="button" @click="subFunc" v-text="login_info.btntxt">登录</button>
 		      	</div>
 		    </div>
 		</div>

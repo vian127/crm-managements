@@ -375,3 +375,6 @@ ul.dropdown-menu.dropdown-messages li a div {
   .clearfix:after {
     clear: both;
   }
+th {
+    text-align: center;
+}

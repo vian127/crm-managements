@@ -111,10 +111,17 @@ require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
      $('.basic-sure').on('click',function(){
       var count = vm.material;
       console.log(count);
-  })
+    })
+
+    // tab表格栏
+    $('.stats li').on('click',function(){
+      var index = $(this).index();
+      $(this).addClass('stats-active').siblings().removeClass('stats-active')
+      $('.stats-info>div').eq(index).show().siblings().hide();
+    })
 
 
-      });
+  });
     // 共用对象
     var def={
       trees:{

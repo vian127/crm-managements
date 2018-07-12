@@ -573,7 +573,7 @@
               <div class="form-group col-md-4">
                 <label for="">行业类型</label>
                 <ul class="form-control checked-list js-checked-list" data-key='industry'>
-                    <li>请选择行业类型</li>
+                  <li>请选择行业类型</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-industry">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -609,7 +609,7 @@
               <div class="form-group col-md-4">
                 <label for="">风格</label>
                 <ul class="form-control checked-list js-checked-list" data-key='style'>
-                    <li>请选择风格</li>
+                  <li>请选择风格</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-style">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -625,7 +625,7 @@
               <div class="form-group col-md-4">
                 <label for="">重点单品</label>
                 <ul class="form-control checked-list js-checked-list" data-key='single'>
-                    <li>请选择重点单品</li>
+                  <li>请选择重点单品</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-single">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -643,7 +643,7 @@
               <div class="form-group col-md-4">
                 <label for="">重点开发季节</label>
                 <ul class="form-control checked-list js-checked-list" data-key='season'>
-                    <li>请选择重点开发季节</li>
+                  <li>请选择重点开发季节</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-season">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -659,7 +659,7 @@
               <div class="form-group col-md-4">
                 <label for="">材质</label>
                 <ul class="form-control checked-list js-checked-list" data-key='material'>
-                    <li>请选择材质</li>
+                  <li>请选择材质</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-material">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -675,7 +675,7 @@
               <div class="form-group col-md-4">
                 <label for="">面料工艺</label>
                 <ul class="form-control checked-list js-checked-list" data-key='process'>
-                    <li>请选择面料工艺</li>
+                  <li>请选择面料工艺</li>
                 </ul>
                 <div class="filter-div js-filter-div" data-id="js-trees-process">
                   <input type="text" placeholder="输入要搜索的文字" class='form-control js-search-trees'>
@@ -1209,6 +1209,337 @@
               </tbody>
             </table>
             <div id="test1"></div>
+          </div>
+
+          <div class="stats">
+            <ul class='clearfix'>
+              <li class='stats-active'>领</li>
+              <li>协</li>
+              <li>活</li>
+              <li>电</li>
+              <li>客</li>
+              <li>地</li>
+              <li>订</li>
+              <li>发</li>
+              <li>开</li>
+              <li>商</li>
+              <li>祥</li>
+              <li>统</li>
+            </ul>
+          </div>
+          <div class='stats-info'>
+            <div class='pr-quest' style="display:block;">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>指派人</th>
+                    <th>状态</th>
+                    <th>员工</th>
+                    <th>状态</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.wx }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-assist'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>操作者</th>
+                    <th>协助人</th>
+                    <th>第二协助人</th>
+                    <th>开始时间</th>
+                    <th>开始时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-activity'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>备注</th>
+                    <th>名单等级</th>
+                    <th>用户</th>
+                    <th>活动类型</th>
+                    <th>活动时间</th>
+                    <th>活动状态</th>
+                    <th>员工</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-record'>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-5">
+                      <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr class="active">
+                            <th colspan="3">来电记录</th>
+                          </tr>
+                          <tr>
+                              <th>时间</th>
+                              <th>备注</th>
+                              <th>员工</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         
+                          <tr align='center' v-for='item in list'>
+                            <td>{{ item.role }}</td>
+                            <td>{{ item.position }}</td>
+                            <td>{{ item.status }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="col-md-7">
+                      <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr class="active">
+                            <th colspan="7">去电记录</th>
+                          </tr>
+                          <tr>
+                              <th>时间</th>
+                              <th>用户</th>
+                              <th>备注</th>
+                              <th>名单等级</th>
+                              <th>去电结果</th>
+                              <th>员工</th>
+                              <th>录音</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         
+                          <tr align='center' v-for='item in list'>
+                            <td>{{ item.role }}</td>
+                            <td>{{ item.position }}</td>
+                            <td>{{ item.status }}</td>
+                            <td>{{ item.mobile }}</td>
+                            <td>{{ item.telephone }}</td>
+                            <td>{{ item.wx }}</td>
+                            <td>{{ item.wx }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='pr-client'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>用户</th>
+                    <th>服务方式</th>
+                    <th>服务内容</th>
+                    <th>备注</th>
+                    <th>回访级别</th>
+                    <th>满意度</th>
+                    <th>联络结果</th>
+                    <th>联络状态</th>
+                    <th>录音</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-service'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>用户</th>
+                    <th>备注</th>
+                    <th>地勤类型</th>
+                    <th>服务内容</th>
+                    <th>拜访次数</th>
+                    <th>员工</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-plan'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>计算业绩时间</th>
+                    <th>网站</th>
+                    <th>公司名称</th>
+                    <th>账号</th>
+                    <th>总金额</th>
+                    <th>业绩金额</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                    <th>业务员</th>
+                    <th>状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td></td>
+                    <td></td>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-invoice'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>是否需要发票</th>
+                    <th>发票类型</th>
+                    <th>发票抬头</th>
+                    <th>开票内容</th>
+                    <th>邮寄地址</th>
+                    <th>联系人</th>
+                    <th>联系方式</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-express'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>发票号</th>
+                    <th>邮寄地址</th>
+                    <th>联系人</th>
+                    <th>联系方式</th>
+                    <th>状态</th>
+                    <th>发票属性</th>
+                    <th>快递单号</th>
+                    <th>快递公司</th>
+                    <th>索取时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-Traders'>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>用户账户名</th>
+                    <th>电话</th>
+                    <th>商拍地区</th>
+                    <th>品牌名称</th>
+                    <th>性别</th>
+                    <th>审核状态</th>
+                    <th>数据更新时间</th>
+                    <th>备注</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.position }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>{{ item.telephone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='pr-link'>133</div>
+            <div class='pr-statistics'>144</div>
           </div>
         </div>
       </div>

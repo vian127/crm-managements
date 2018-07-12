@@ -10,3 +10,9 @@
 .table{background-color: #ededed}
 .table>thead{background-color: #cce1f5;}
 .form-group>label{width: 4.5em;vertical-align:middle;}
+
+.stats>ul>li {float:left;padding: 0 10px;border: 1px solid #797979;border-radius: 0 5px 0 0;}
+.stats-info {height:380px;overflow: auto; white-space: nowrap;}
+.stats-info>div{display:none;}
+.stats-active{background-color: #00ccff;}
+.pr-record div {padding:0;}

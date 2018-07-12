@@ -15,7 +15,7 @@ require.config({
   }
 });
   
-require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
+require(['vue','ztree-excheck','ztree-exhide','layui'], function (Vue) {
   $(function () {
       var vm = new Vue({
           el: '#app',

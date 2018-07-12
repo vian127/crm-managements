@@ -71,7 +71,6 @@ require(['jquery','general','vue','msg'],function(jquery,general,Vue,msg){
 				}else{
 					is_next=true;
 				}
-
 				if(is_next==true){
 					data.is_submitting=true;
 					data.btntxt='登录中...';

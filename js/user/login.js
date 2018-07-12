@@ -3,7 +3,7 @@
 	#date 		2018/07/12
     #porpuse    共用入口
 */
-require(['vue','msg'],function(Vue,msg){
+require(['jquery','general','vue','msg'],function(jquery,general,Vue,msg){
 	var app=new Vue({
 		el:'#app',
 		data(){
@@ -18,11 +18,29 @@ require(['vue','msg'],function(Vue,msg){
 					msg:'',
 					btntxt:'登录',
 					is_submitting:false
+				},
+				box:{
+					top:150
 				}
 			}
 		},
 		methods:{
-			subFunc:function(e){
+			init:function(){														//初始化
+				this.bindFunc()
+			},
+			bindFunc:function(){													//事件绑定
+				var self=this,$box=$(".js-login-box");
+				setPosition();
+				$(window).on('resize',function(){
+					general.fn.throttle(setPosition,self,[]);
+				});
+
+				function setPosition(){												//设置框位置
+					var oh=document.documentElement.clientHeight;
+					self.box.top=(oh-$box.height())/2;
+				};
+			},
+			subFunc:function(e){													//提交数据
 				var tag=e.target;
 				var data=this.login_info;
 
@@ -69,6 +87,9 @@ require(['vue','msg'],function(Vue,msg){
 					data.msg=txt;
 				}
 			}
+		},
+		mounted:function(){
+			this.init();
 		}
 	})
 });

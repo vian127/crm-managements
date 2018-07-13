@@ -44,6 +44,10 @@ require.config({
     "jquery.metisMenu": {
       deps: ["jquery"]
     },
+    "layui":{
+        exports:"layui",
+        deps:["css!../js/lib/layui/css/layui.css"]
+    },
     "nicescroll": {
       deps: ["jquery"],
     },

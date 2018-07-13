@@ -15,11 +15,11 @@ require.config({
   }
 });
   
-require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
-  $(function () {
-      var vm = new Vue({
-          el: '#app',
-          data:{
+require(['vue','layui','ztree-excheck','ztree-exhide'], function (Vue,Layui) {
+    $(function (){
+        var vm = new Vue({
+            el: '#app',
+            data:{
               list:[
                     {id: 1,name:'张天一',role: '决策者,领导者',position: '总经理',status: '在职',mobile: '138883228323',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
                     {id: 2,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
@@ -87,12 +87,12 @@ require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
                window.location.href='../../views/workbench/adduser.html';
               }
             }
-          })
+        });
 
            // 分页
         function page(){
-          layui.use('laypage', function(){
-              var laypage = layui.laypage;
+          Layui.use('laypage', function(){
+              var laypage = Layui.laypage;
               //执行一个laypage实例
               laypage.render({
                   elem: 'test1'
@@ -105,23 +105,23 @@ require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
                   }
               });
           });
-      }
-     page();
+        };
+        page();
 
-     $('.basic-sure').on('click',function(){
-      var count = vm.material;
-      console.log(count);
-    })
+        $('.basic-sure').on('click',function(){
+            var count = vm.material;
+            console.log(count);
+        });
 
-    // tab表格栏
-    $('.stats li').on('click',function(){
-      var index = $(this).index();
-      $(this).addClass('stats-active').siblings().removeClass('stats-active')
-      $('.stats-info>div').eq(index).show().siblings().hide();
-    })
+        // tab表格栏
+        $('.stats li').on('click',function(){
+            var index = $(this).index();
+            $(this).addClass('stats-active').siblings().removeClass('stats-active')
+            $('.stats-info>div').eq(index).show().siblings().hide();
+        });
 
 
-  });
+  
     // 共用对象
     var def={
       trees:{
@@ -201,8 +201,6 @@ require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
 
 
 
-
-
     function bindFunc(){
       // 点击获取焦点
       $('.js-checked-list').on('click',function(e){
@@ -271,15 +269,9 @@ require(['vue','ztree-excheck','ztree-exhide'], function (Vue) {
         tag.html(_html);
       };
 
-    }
-    // $.fn.zTree.init($('.js-trees-ele'), def.setting, def.trees['industry']);
-
-    function setTrees(){                                          // 统一生成树结构
-      
-
-
-    }
-
+    };
+    });
 })
+
 
       

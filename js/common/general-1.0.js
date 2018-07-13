@@ -236,7 +236,7 @@ define(["jquery","msg"],function(jquery,msg){
 
                 var isError=options["isError"]!==undefined?options["isError"]:true,
                 code=options["code"]?options["code"]:"code",
-                code_value=options["code_value"]!==undefined?options["code_value"]:0,
+                code_value=options["code_value"]!==undefined?options["code_value"]:200,
                 message=options["message"]!==undefined?options["message"]:"msg";
                 var successFunc=options["success"]?options["success"]:null;
                 var errorFunc=options["error"]?options["error"]:null;

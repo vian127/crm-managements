@@ -4,6 +4,7 @@
     #porpuse    共用入口
 */
 require(['jquery','general','vue','msg'],function(jquery,general,Vue,msg){
+
 	var app=new Vue({
 		el:'#app',
 		data(){
@@ -26,7 +27,8 @@ require(['jquery','general','vue','msg'],function(jquery,general,Vue,msg){
 		},
 		methods:{
 			init:function(){														//初始化
-				this.bindFunc()
+				this.bindFunc();
+				this.getData();
 			},
 			bindFunc:function(){													//事件绑定
 				var self=this,$box=$(".js-login-box");
@@ -85,6 +87,24 @@ require(['jquery','general','vue','msg'],function(jquery,general,Vue,msg){
 				}else{
 					data.msg=txt;
 				}
+			},
+			getData:function(){
+				console.log(111)
+				$.ajax({
+					url:'http://192.168.1.38:8081/api/customer/type',
+					type:'POST',
+					contentType:'application/json',
+					dataType:'json',
+					data:JSON.stringify({
+						type:'receive',
+						customerId:'1345318'
+					}),
+					success:function(data){
+						console.log(data);
+					}
+				})
+				console.log(222)
+				
 			}
 		},
 		mounted:function(){

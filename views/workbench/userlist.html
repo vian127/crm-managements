@@ -7,7 +7,7 @@
   <title>客户管理</title>
   <!-- Bootstrap Styles-->
   <link href="../../css/common/base.css" rel="stylesheet" />
-  <link href="../../css/lib/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../css/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <!-- FontAwesome Styles-->
   <link href="../../css/common/font-awesome.css" rel="stylesheet" />
   <!-- Custom Styles-->
@@ -523,19 +523,19 @@
             <tr>
               <td width='5%' align='right'>主账号</td>
               <td width='20%'>
-                <input type="text" v-model='collect.account' name='account'>
+                <input type="text"  name='account' v-model='collect.account'>
               </td>
               <td width='5%' align='right'>公司名称</td>
               <td width='20%'>
-                <input type="text" v-model='collect.company' name='company'>
+                <input type="text" name='company' v-model='collect.company'>
               </td>
               <td width='5%' align='right'>联系电话</td>
               <td width='20%'>
-                <input type="tel" v-model='collect.tel' name='tel'>
+                <input type="tel" name='tel' v-model='collect.tel'>
               </td>
               <td width='5%' align='right'>服务阶段</td>
               <td width='20%'>
-                <select v-model='collect.stage' name='stage'>
+                <select name='stage' v-model='collect.stage'>
                   <option value="1">新客期</option>
                   <option value="2">服务期</option>
                   <option value="3">流转期</option>
@@ -545,15 +545,15 @@
             <tr>
               <td align='right'>领用人</td>
               <td>
-                <input type="text" v-model='collect.user' name='user'>
+                <input type="text" name='user' v-model='collect.user'>
               </td>
               <td align='right'>id</td>
               <td>
-                <input type="text" v-model='collect.userid' name='userid'>
+                <input type="text" name='userid' v-model='collect.userid'>
               </td>
               <td align='right'>qq</td>
               <td>
-                <input type="text" v-model='collect.qq' name='qq'>
+                <input type="text" name='qq' v-model='collect.qq'>
               </td>
               <td align='right'>网站来源</td>
               <td>
@@ -612,7 +612,7 @@
                 <th width='1%'>
                   <input type="checkbox" class='info-all'>
                 </th>
-                <th v-if='isshow' width='10%'>操作</th>
+                <th width='10%'>操作</th>
                 <th v-for='item in thead' v-if="item.is_show">{{ item.name }}</th>
               </tr>
             </thead>

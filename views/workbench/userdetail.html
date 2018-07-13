@@ -515,25 +515,25 @@
             <div class='col-md-12'>
               <div class="form-group col-md-4">
                 <label for="">主账号</label>
-                <input type="text" v-model='material.account' class="form-control">
+                <input type="text" class="form-control" v-model='material.account'>
               </div>
               <div class="form-group col-md-4">
                 <label for="">客户id</label>
-                <input type="text" v-model='material.id' class="form-control">
+                <input type="text" class="form-control" v-model='material.id'>
               </div>
               <div class="form-group col-md-4">
                 <label for="">品牌名称</label>
-                <input type="text" v-model='material.brand' class="form-control">
+                <input type="text" class="form-control" v-model='material.brand'>
               </div>
             </div>
             <div class='col-md-12'>
               <div class="form-group col-md-4">
                 <label for="">公司名称</label>
-                <input type="text" v-model='material.company' class="form-control">
+                <input type="text" class="form-control" v-model='material.company'>
               </div>
               <div class="form-group col-md-4">
                 <label for="">邮箱</label>
-                <input type="text" v-model='material.email' class="form-control">
+                <input type="text" class="form-control" v-model='material.email'>
               </div>
             </div>
             <div class='col-md-12'>
@@ -601,9 +601,13 @@
               <div class="form-group col-md-4">
                 <label for="formele3">性别</label>
                 <select name="checks" id="formele3" class='form-control' v-model='material.sex'>
-                  <option value="1">童装</option>
-                  <option value="1">企业类型</option>
-                  <option value="1">企业类型</option>
+                  <option value="1">男</option>
+                  <option value="1">女</option>
+                  <option value="1">男女</option>
+                  <option value="1">男女童</option>
+                  <option value="1">男童</option>
+                  <option value="1">女童</option>
+                  <option value="1">无性别</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
@@ -760,7 +764,7 @@
                 <input type="text" value='24' class="form-control" disabled>
               </div>
               <div class='col-md-12'>
-                <button type="button" class="btn btn-primary basic-sure pull-right">保存资料</button>
+                <button type="button" class="btn btn-primary pull-right" @click='saveMaterial'>保存资料</button>
               </div>
             </div>
           </div>
@@ -815,7 +819,7 @@
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <label for="">服务对象</label>
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.person'>
                   <option value="1">张三</option>
                   <option value="2">李四</option>
                   <option value="3">王五</option>
@@ -823,28 +827,29 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="">手机号码</label>
-                <input type="text" value='13865675455' class="form-control" disabled='disabled'>
+                <input type="text" value='13865675455' class="form-control" disabled='disabled' v-model='visit.phone'>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <label for="">服务方式</label>
-                <select name="" id="" class="form-control">
-                  <option value="1">去电</option>
-                  <option value="2">微信</option>
-                  <option value="3">QQ</option>
+                <select name="" id="" class="form-control" v-model='visit.link'>
+                  <option value="1">来电</option>
+                  <option value="2">去电</option>
+                  <option value="3">微信</option>
+                  <option value="4">QQ</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
                 <label for="">联络类型</label>
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.stage'>
                   <option value="1">有效</option>
                   <option value="2">无效</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
                 <label for="">联络结果</label>
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.result'>
                   <option value="1">稍后联系</option>
                   <option value="2">无人接听</option>
                   <option value="2">空号/错号</option>
@@ -855,20 +860,20 @@
               <div class="form-group col-md-4">
                 <div>
                   <label for="">客户关注项</label>
-                  <input type="text" class='form-control'>
+                  <input type="text" class='form-control' v-model='visit.attention'>
                 </div>
               </div>
               <div class="form-group col-md-8">
                 <div>
                   <label for="">关注项备注</label>
-                  <textarea name="" id="" cols="70%" rows="1" class='form-control'></textarea>
+                  <textarea name="" id="" cols="70%" rows="1" class='form-control' v-model='visit.remark'></textarea>
                 </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <label for="">用户印象</label>
-                <select name="" id="" class='form-control'>
+                <select name="" id="" class='form-control' v-model='visit.impress'>
                   <option value="1">I (很好沟通)</option>
                   <option value="2">II (一般)</option>
                   <option value="4">III (拒绝沟通)</option>
@@ -878,11 +883,11 @@
             <div class="col-md-12">
               <div class="form-group col-md-2">
                 <label for="">多产品</label>
-                <input type="checkbox" name='' value='APM'>
+                <input type="checkbox" name='' value='APM' v-model='visit.apm'>
                 <span>APM</span>
               </div>
               <div class="form-group col-md-2">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.hasapm'>
                   <option value="1">不需要</option>
                   <option value="2">免费试用</option>
                   <option value="3">了解</option>
@@ -890,11 +895,11 @@
                 </select>
               </div>
               <div class="form-group col-md-1">
-                <input type="checkbox" name='' value='书籍'>
+                <input type="checkbox" name='' value='书籍' v-model='visit.book'>
                 <span>书籍</span>
               </div>
               <div class="form-group col-md-2">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.hasbook'>
                   <option value="1">不需要</option>
                   <option value="2">免费试用</option>
                   <option value="3">了解</option>
@@ -902,11 +907,11 @@
                 </select>
               </div>
               <div class="form-group col-md-1">
-                <input type="checkbox" name='' value='总裁班'>
+                <input type="checkbox" name='' value='总裁班' v-model='visit.ceo'>
                 <span>总裁班</span>
               </div>
               <div class="form-group col-md-2">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.hasceo'>
                   <option value="1">不需要</option>
                   <option value="2">免费试用</option>
                   <option value="3">了解</option>
@@ -917,11 +922,11 @@
             <div class="col-md-12">
               <div class="form-group col-md-2">
                 <label for=""></label>
-                <input type="checkbox" name='' value='云图'>
+                <input type="checkbox" name='' value='云图' v-model='visit.cloud'>
                 <span>云图</span>
               </div>
               <div class="form-group col-md-2">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.hascloud'>
                   <option value="1">不需要</option>
                   <option value="2">免费试用</option>
                   <option value="3">了解</option>
@@ -929,11 +934,11 @@
                 </select>
               </div>
               <div class="form-group col-md-1">
-                <input type="checkbox" name='' value='韩国行'>
+                <input type="checkbox" name='' value='韩国行' v-model='visit.seoul'>
                 <span>韩国行</span>
               </div>
               <div class="form-group col-md-2">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.hasseoul'>
                   <option value="1">不需要</option>
                   <option value="2">免费试用</option>
                   <option value="3">了解</option>
@@ -941,11 +946,11 @@
                 </select>
               </div>
               <div class="form-group col-md-1">
-                <input type="checkbox" name='' value='展会'>
+                <input type="checkbox" name='' value='展会' v-model='visit.exhibition'>
                 <span>展会</span>
               </div>
               <div class="form-group col-md-2">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" v-model='visit.hasexhibition'>
                   <option value="1">不需要</option>
                   <option value="2">免费试用</option>
                   <option value="3">了解</option>
@@ -963,61 +968,61 @@
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <div class="form-group col-md-5">
-                  <input type="checkbox" name='' value='初次回访'>
+                  <input type="checkbox" name='' value='初次回访' v-model='visit.first_visit'>
                   <span>初次回访</span>
                 </div>
                 <div class="form-group col-md-6">
-                  <select name="" id="" class='form-control'>
+                  <select name="" id="" class='form-control' v-model='visit.perfect'>
                     <option value="1">完善客户资料</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='核实在职情况'>
+                <input type="checkbox" name='' value='核实在职情况' v-model='visit.verify'>
                 <span>核实在职情况</span>
               </div>
               <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='核实决策者情况'>
+                <input type="checkbox" name='' value='核实决策者情况' v-model='visit.verify'>
                 <span>核实决策者情况</span>
               </div>
               <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='核实使用者情况'>
+                <input type="checkbox" name='' value='核实使用者情况' v-model='visit.verify'>
                 <span>核实使用者情况</span>
               </div>
               <div class="form-group col-md-2">
-                <input type="checkbox" name='' value='核实开发者信息'>
+                <input type="checkbox" name='' value='核实开发者信息' v-model='visit.verify'>
                 <span>核实开发信息</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-4">
                 <div class="form-group col-md-5">
-                  <input type="checkbox" name='' value='发票项'>
+                  <input type="checkbox" name='' value='发票项' v-model='visit.invoice'>
                   <span>发票项</span>
                 </div>
                 <div class="form-group col-md-6">
-                  <select name="" id="" class='form-control'>
+                  <select name="" id="" class='form-control' v-medel='visit.is_invoice'>
                     <option value="1">普通发票</option>
-                    <option value="1">专用发票</option>
-                    <option value="1">不需要发票</option>
-                    <option value="1">暂缓开票</option>
-                    <option value="1">提前开票</option>
-                    <option value="1">未收到，催发票</option>
+                    <option value="2">专用发票</option>
+                    <option value="3">不需要发票</option>
+                    <option value="4">暂缓开票</option>
+                    <option value="5">提前开票</option>
+                    <option value="6">未收到，催发票</option>
                   </select>
                 </div>
               </div>
               <div>
                 <div class="form-group col-md-2">
-                  <input type="checkbox" name='' value='完成'>
+                  <input type="checkbox" name='' value='完成' v-model='visit.invoice_all'>
                   <span>完成</span>
                 </div>
                 <div class="form-group col-md-2">
-                  <input type="checkbox" name='' value='缺税号'>
+                  <input type="checkbox" name='' value='缺税号' v-model='visit.invoice_all'>
                   <span>缺税号</span>
                 </div>
                 <div class="form-group col-md-2">
-                  <input type="checkbox" name='' value='缺委托书'>
+                  <input type="checkbox" name='' value='缺委托书' v-model='visit.invoice_all'>
                   <span>缺委托书</span>
                 </div>
               </div>
@@ -1027,29 +1032,29 @@
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-3">
-                  <input type="checkbox" name='' value='赠品项'>
+                  <input type="checkbox" name='' value='赠品项' v-model='visit.present'>
                   <span>赠品项赠品</span>
                 </div>
 
                 <div class="form-group col-md-6">
-                  <input type="checkbox" name='' value='更换地址/收件人信息'>
+                  <input type="checkbox" name='' value='更换地址/收件人信息' v-model='visit.is_present'>
                   <span>更换收件地址/收件人信息</span>
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='更换赠品'>
+                <input type="checkbox" name='' value='更换赠品' v-model='visit.is_present'>
                 <span>更换赠品</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-6 col-md-offset-3">
-                  <input type="checkbox" name='' value='签收查询'>
+                  <input type="checkbox" name='' value='签收查询' v-model='visit.is_present'>
                   <span>签收查询</span>
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='快递问题'>
+                <input type="checkbox" name='' value='快递问题' v-model='visit.is_present'>
                 <span>快递问题</span>
               </div>
             </div>
@@ -1058,59 +1063,59 @@
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-3">
-                  <input type="checkbox" name='' value='登录使用项'>
+                  <input type="checkbox" name='' value='登录使用项' v-model='visit.login'>
                   <span>登录使用项</span>
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="checkbox" name='' value='客户端问题'>
+                  <input type="checkbox" name='' value='客户端问题' v-model='visit.is_login'>
                   <span>客户端问题</span>
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='客户绑定数量问题'>
+                <input type="checkbox" name='' value='客户绑定数量问题' v-model='visit.is_login'>
                 <span>客户绑定数量问题</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-6 col-md-offset-3">
-                  <input type="checkbox" name='' value='客户端更换绑定'>
+                  <input type="checkbox" name='' value='客户端更换绑定' v-model='visit.is_login'>
                   <span>客户端更换绑定</span>
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='账号密码问题'>
+                <input type="checkbox" name='' value='账号密码问题' v-model='visit.is_login'>
                 <span>账号密码问题</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-6 col-md-offset-3">
-                  <input type="checkbox" name='' value='IP问题'>
+                  <input type="checkbox" name='' value='IP问题' v-model='visit.is_login'>
                   <span>IP问题</span>
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='手机/IPAD客户端'>
+                <input type="checkbox" name='' value='手机/IPAD客户端' v-model='visit.is_login'>
                 <span>手机/IPAD客户端</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-6 col-md-offset-3">
-                  <input type="checkbox" name='' value='浏览器问题'>
+                  <input type="checkbox" name='' value='浏览器问题' v-model='visit.is_login'>
                   <span>浏览器问题</span>
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='下载问题'>
+                <input type="checkbox" name='' value='下载问题' v-model='visit.is_login'>
                 <span>下载问题</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-6 col-md-offset-3">
-                  <input type="checkbox" name='' value='我们公司问题'>
+                  <input type="checkbox" name='' value='我们公司问题' v-model='visit.is_login'>
                   <span>我们公司问题</span>
                 </div>
               </div>
@@ -1120,13 +1125,13 @@
             <div class="col-md-12">
               <div class="form-group col-md-6">
                 <div class="form-group col-md-3">
-                  <input type="checkbox" name='' value='网站服务问题'>
+                  <input type="checkbox" name='' value='网站服务项' v-model='visit.sites'>
                   <span>网站服务项</span>
                 </div>
                 <div class="form-group col-md-9">
-                  <input type="checkbox" name='' value='网站服务项'>
-                  <span>网站服务项</span>
-                  <select name="" id="" class='form-control'>
+                  <input type="checkbox" name='' v-model='visit.login_status'>
+                  <span>网站登录情况</span>
+                  <select name="" id="" class='form-control' v-model='visit.is_status'>
                     <option value="1">已正常登录</option>
                     <option value="2">未登录,已告知账号密码</option>
                     <option value="3">未登录,未联系上</option>
@@ -1134,9 +1139,9 @@
                 </div>
               </div>
               <div class="form-group col-md-5">
-                <input type="checkbox" name='' value='网站使用介绍'>
+                <input type="checkbox" name='' value='网站使用介绍' v-model='visit.intro'>
                 <span>网站使用介绍</span>
-                <select name="" id="" class='form-control'>
+                <select name="" id="" class='form-control' v-model='visit.is_intro'>
                   <option value="1">已介绍</option>
                   <option value="2">未介绍</option>
                   <option value="3">客户表示不需要介绍</option>
@@ -1145,12 +1150,96 @@
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='正常推荐资料' v-model='visit.is_sites'>
+                  <span>正常推荐资料</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='网站检索问题' v-model='visit.is_sites'>
+                <span>网站检索问题</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='子账号' v-model='visit.is_sites'>
+                  <span>子账号</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='网站资料少/或不集中,需单独对接' v-model='visit.is_sites'>
+                <span>网站资料少/或不集中,需单独对接</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='索要资料包' v-model='visit.is_sites'>
+                  <span>索要资料包</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='找品牌名' v-model='visit.is_sites'>
+                <span>找品牌名</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='找细节/高清图' v-model='visit.is_sites'>
+                  <span>找细节/高清图</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='找类似款/花型' v-model='visit.is_sites'>
+                <span>找类似款/花型</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='趋势少/慢/旧' v-model='visit.is_sites'>
+                  <span>趋势少/慢/旧</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='款式少/慢/旧' v-model='visit.is_sites'>
+                <span>款式少/慢/旧</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='花型少/慢/旧' v-model='visit.is_sites'>
+                  <span>花型少/慢/旧</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='商拍' v-model='visit.is_sites'>
+                <span>商拍</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
+                <div class="form-group col-md-6 col-md-offset-3">
+                  <input type="checkbox" name='' value='网站出错' v-model='visit.is_sites'>
+                  <span>网站出错</span>
+                </div>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="checkbox" name='' value='跟进投诉' v-model='visit.is_sites'>
+                <span>跟进投诉</span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-6">
                 <div class="form-group col-md-3">
-                  <input type="checkbox" name='' value='推荐项'>
+                  <input type="checkbox" name='' value='推荐项' v-model='visit.recommend'>
                   <span>推荐项</span>
                 </div>
                 <div class="form-group col-md-9">
-                  <select name="" id="" class='form-control'>
+                  <select name="" id="" class='form-control' v-model='visit.is_recommend'>
                     <option value="1">升级</option>
                     <option value="2">续费</option>
                     <option value="3">销售</option>
@@ -1163,17 +1252,17 @@
             <div class="col-md-12">
               <div class="form-group col-md-9">
                 <div class="form-group col-md-2">
-                  <input type="checkbox" name='' value='APM'>
+                  <input type="checkbox" name='' value='备注' v-model='visit.mark'>
                   <span>备注</span>
                 </div>
                 <div class="form-group col-md-10">
-                  <textarea name="" id="" cols="100%" rows="2" class='form-control'></textarea>
+                  <textarea name="" id="" cols="100%" rows="2" class='form-control' v-model='visit.is_mark'></textarea>
                 </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group col-md-12">
-                <button class='btn btn-primary pull-right'>保存回访记录</button>
+                <button class='btn btn-primary pull-right' @click='visitRecord'>保存回访记录</button>
               </div>
             </div>
           </div>
@@ -1311,13 +1400,13 @@
                             <th colspan="3">来电记录</th>
                           </tr>
                           <tr>
-                              <th>时间</th>
-                              <th>备注</th>
-                              <th>员工</th>
-                            </tr>
+                            <th>时间</th>
+                            <th>备注</th>
+                            <th>员工</th>
+                          </tr>
                         </thead>
                         <tbody>
-                         
+
                           <tr align='center' v-for='item in list'>
                             <td>{{ item.role }}</td>
                             <td>{{ item.position }}</td>
@@ -1333,17 +1422,17 @@
                             <th colspan="7">去电记录</th>
                           </tr>
                           <tr>
-                              <th>时间</th>
-                              <th>用户</th>
-                              <th>备注</th>
-                              <th>名单等级</th>
-                              <th>去电结果</th>
-                              <th>员工</th>
-                              <th>录音</th>
-                            </tr>
+                            <th>时间</th>
+                            <th>用户</th>
+                            <th>备注</th>
+                            <th>名单等级</th>
+                            <th>去电结果</th>
+                            <th>员工</th>
+                            <th>录音</th>
+                          </tr>
                         </thead>
                         <tbody>
-                         
+
                           <tr align='center' v-for='item in list'>
                             <td>{{ item.role }}</td>
                             <td>{{ item.position }}</td>

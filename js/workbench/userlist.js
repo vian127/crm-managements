@@ -1,15 +1,15 @@
-require(['vue'], function (Vue) {
+require(['vue','layui'], function (Vue,layui) {
     $(function () {
         var vm = new Vue({
             el: '#app',
             data:{
-                list:[{id: 1,check: '编辑',name: '12112',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
-                      {id: 2,check: '编辑',name: '32343',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
-                      {id: 3,check: '编辑',name: '54647',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
-                      {id: 4,check: '编辑',name: '32423',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
-                      {id: 5,check: '编辑',name: '86545',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
-                      {id: 6,check: '编辑',name: '97655',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
-                      {id: 7,check: '编辑',name: '88888',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},
+                list:[{id: 1,is_show:true,check: '编辑',name: '12112',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
+                      {id: 2,is_show:true,check: '编辑',name: '32343',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
+                      {id: 3,is_show:true,check: '编辑',name: '54647',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
+                      {id: 4,is_show:true,check: '编辑',name: '32423',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
+                      {id: 5,is_show:true,check: '编辑',name: '86545',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
+                      {id: 6,is_show:true,check: '编辑',name: '97655',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
+                      {id: 7,is_show:true,check: '编辑',name: '88888',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12',is_show:true},
                     ],
                 thead:[{name:'主账号',id:1,is_show:true},
                        {name:'公司名称',id:2,is_show:true},
@@ -28,7 +28,6 @@ require(['vue'], function (Vue) {
                     source:'1',
                     category:'1',
                 },
-                isshow:true, 
             },
             methods:{
                 changeCol:function(event,id){
@@ -40,7 +39,7 @@ require(['vue'], function (Vue) {
                             this.thead[i].is_show=is_check;
                             console.log(i)
                             break;
-                        }
+                        }                  
                     }
                     console.log(is_check);
                 },

@@ -15,80 +15,150 @@ require.config({
   }
 });
   
-require(['vue','layui','ztree-excheck','ztree-exhide'], function (Vue,Layui) {
+require(['vue','msg','layui','ztree-excheck','ztree-exhide'], function (Vue,msg,Layui) {
     $(function (){
         var vm = new Vue({
             el: '#app',
-            data:{
-              list:[
-                    {id: 1,name:'张天一',role: '决策者,领导者',position: '总经理',status: '在职',mobile: '138883228323',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 2,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 3,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 4,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 5,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 6,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 7,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
-                    {id: 8,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'}
-                  ],
-              record:[
-                    {id:1,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:2,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:3,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:4,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:5,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:6,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:7,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
-                    {id:8,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'}
-                ], 
+            data() {
+              return {
+                list:[
+                  {id: 1,name:'张天一',role: '决策者,领导者',position: '总经理',status: '在职',mobile: '138883228323',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 2,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 3,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 4,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 5,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 6,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 7,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'},
+                  {id: 8,name:'张天一',role: '决策者',position: '总经理',status: '在职',mobile: '1233312',telephone:'021-344545345',wx:'232545545',judge:'是',ext:'111',qq:'4546546456',email:'22222@qq.com',source:'注册'}
+                ],
+                record:[
+                  {id:1,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:2,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:3,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:4,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:5,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:6,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:7,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'},
+                  {id:8,created:'2017-01-16 14:10:20',session:'张三',tel:'13875875687',selation:'来电',stage:'有效',result:'成功',impress:'较好',content:'网站的推荐',detail:'法撒旦',contact:'钉钉'}
+              ], 
 
                 datas:{
                   pro:[
-                    {id:1,name:'上海'},
-                    {id:2,name:'北京'},
-                    {id:3,name:'广州'},
-                    {id:4,name:'深圳'}
-                  ],
+                  {id:1,name:'上海'},
+                  {id:2,name:'北京'},
+                  {id:3,name:'广州'},
+                  {id:4,name:'深圳'}
+                ],
                   city:[
-                    {id:1,name:'黄石'},
-                    {id:2,name:'武汉'},
-                    {id:3,name:'随州'},
-                    {id:4,name:'黄冈'}
-                  ]
+                  {id:1,name:'黄石'},
+                  {id:2,name:'武汉'},
+                  {id:3,name:'随州'},
+                  {id:4,name:'黄冈'}
+                ]
+              },
+             
+                material:{
+                  account:'123',
+                  id:'123',
+                  brand:'123',
+                  company:'123',  
+                  email:'123',
+                  pro:'1',
+                  city:'1',
+                  district:'1',
+                  addr:'123',
+                  telephone:'123',
+                  genre:'1',
+                  trade:'1',
+                  sex:'1',
+                  stage:'1',
+                  state:'1', 
+                  invoice:'1',
+                  limit:'全网',
                 },
-               
-              material:{
-                    account:'333',
-                    id:'33333333',
-                    brand:'sdff',
-                    company:'33',  
-                    email:'5555',
-                    pro:'1',
-                    city:'1',
-                    district:'',
-                    addr:'1',
-                    telephone:'',
-                    genre:'1',
-
-                    trade:'1',
-                    sex:'1',
-                    pattern:'1',
-                    single:'1',
-                    season:'1',
-                    texture:'1',
-                    craft:'1',
-                    stage:'1',
-                    state:'1', 
-                    invoice:'1',
-                    limit:'',
-              }
+                visit:{
+                  person:'2',
+                  phone:'123',
+                  link:'2',
+                  stage:'2',
+                  result:'2',
+                  attention:'123',
+                  remark:'123',
+                  impress:'2',
+                  apm:'true',
+                  hasapm:'2',
+                  book:'true',
+                  hasbook:'2',
+                  ceo:'true',
+                  hasceo:'2',
+                  cloud:'true',
+                  hascloud:'2',
+                  seoul:'true',
+                  hasseoul:'2',
+                  exhibition:'true',
+                  hasexhibition:'2',
+                  first_visit:'true',
+                  perfect:'2',
+                  verify:[],
+                  invoice:'true',
+                  is_invoice:'2',
+                  invoice_all:[],
+                  present:'true',
+                  is_present:[],
+                  login:'true',
+                  is_login:[],
+                  sites:'true',
+                  login_status:'true',
+                  is_status:'2',
+                  intro:'',
+                  is_intro:'2',
+                  is_sites:[],
+                  recommend:'true',
+                  is_recommend:'2',
+                  mark:'true',
+                  is_mark:'123'
+                }
+              } 
             },
             methods:{
-              infoDetail:function(id){            //根据ID查看详情
+              // 保存资料
+              saveMaterial:function(){
+                var data = this.material;
+                var txt='';
+                if(data.id==''){
+                  txt='客户ID不能为空!';
+                  msg.msg({txt:txt},1000)
+                  return
+                }else if(data.company==''){
+                  txt='公司名称不能为空!';
+                  msg.msg({txt:txt},1000)
+                  return
+                }else if(data.pro==''){
+                  txt='城市不能为空！';
+                  msg.msg({txt:txt},1000)
+                  return
+                }else if(data.city==''){
+                  txt='城市不能为空！';
+                  msg.msg({txt:txt},1000)
+                  return
+                }else if(data.district==''){
+                  txt='城市不能为空！';
+                  msg.msg({txt:txt},1000)
+                  return
+                }
+               console.log(data)
+              },
+              //根据ID查看详情
+              infoDetail:function(id){           
                window.location.href='../../views/workbench/adduser.html';
+              },
+              //回访记录
+              visitRecord:function(){
+                var data =this.visit;
+                console.log(data)
               }
-            }
+            },
         });
-
            // 分页
         function page(){
           Layui.use('laypage', function(){
@@ -108,10 +178,6 @@ require(['vue','layui','ztree-excheck','ztree-exhide'], function (Vue,Layui) {
         };
         page();
 
-        $('.basic-sure').on('click',function(){
-            var count = vm.material;
-            console.log(count);
-        });
 
         // tab表格栏
         $('.stats li').on('click',function(){

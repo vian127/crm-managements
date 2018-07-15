@@ -1,0 +1,52 @@
+@charset 'UTF-8';
+.header-title {
+    padding-top: 0px;
+    height: 30px;
+    border-bottom: 1px solid #797979;
+}
+
+.form-group>label{width: 4.5em;vertical-align:middle;}
+.form-section>div>div{margin-bottom: 10px}
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    display:none;
+    z-index: 3;
+}
+
+.chioce {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #797979;
+    width: 175px;
+    text-align: left;
+    padding: 10px 10px 10px 20px;
+    display: none;
+}
+.chioce li {
+    height: 30px;
+    line-height: 30px;
+}
+.chioce span {
+    padding-left: 10px;
+    vertical-align:middle;
+    font-size: 12px;
+}
+.all-select {
+    padding-left: 10px;
+}
+
+.chioce input {
+    vertical-align:middle;
+    margin: 0;
+}

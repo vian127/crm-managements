@@ -56,10 +56,10 @@ require(['vue','layui'], function (Vue,layui) {
       
         //隐藏筛选字段
         $('.user-show').on('click', function () {
-            $('.chioce').toggle();
+            $('.chioce').slideToggle(200);
         });
         $('.btn-pass').on('click', function () {
-            $('.chioce').hide();
+            $('.chioce').slideToggle(200);
         });
 
         $('.user-sure').on('click',function(){

@@ -15,7 +15,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   <link rel="stylesheet" href="../../js/lib/layui/css/layui.css">
   <link href="../../css/common/common.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/customer/client.css">
+  <link rel="stylesheet" href="../../css/workbench/userlist.css">
 </head>
 
 <body>
@@ -518,142 +518,144 @@
       <!-- 内容 -->
       <div class="content" id='app'>
         <!-- 筛选条件 -->
-        <div class='collect'>
-          <table>
-            <tr>
-              <td width='5%' align='right'>主账号</td>
-              <td width='20%'>
-                <input type="text"  name='account' v-model='collect.account'>
-              </td>
-              <td width='5%' align='right'>公司名称</td>
-              <td width='20%'>
-                <input type="text" name='company' v-model='collect.company'>
-              </td>
-              <td width='5%' align='right'>联系电话</td>
-              <td width='20%'>
-                <input type="tel" name='tel' v-model='collect.tel'>
-              </td>
-              <td width='5%' align='right'>服务阶段</td>
-              <td width='20%'>
-                <select name='stage' v-model='collect.stage'>
-                  <option value="1">新客期</option>
-                  <option value="2">服务期</option>
-                  <option value="3">流转期</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td align='right'>领用人</td>
-              <td>
-                <input type="text" name='user' v-model='collect.user'>
-              </td>
-              <td align='right'>id</td>
-              <td>
-                <input type="text" name='userid' v-model='collect.userid'>
-              </td>
-              <td align='right'>qq</td>
-              <td>
-                <input type="text" name='qq' v-model='collect.qq'>
-              </td>
-              <td align='right'>网站来源</td>
-              <td>
-                <select name='source' v-model='collect.source'>
-                  <option value="1">服装</option>
-                  <option value="2">鞋子</option>
-                  <option value="3">箱包</option>
-                  <option value="4">首饰</option>
-                  <option value="5">家纺</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td align='right'>品类</td>
-              <td>
-                <select name='category' v-model='collect.category'>
-                  <option value="1">服装</option>
-                  <option value="2">鞋子</option>
-                  <option value="3">箱包</option>
-                  <option value="4">首饰</option>
-                  <option value="5">家纺</option>
-                </select>
-              </td>
-              <td colspan="6" align='right' class='pick'>
-                <button type="reset" class="btn btn-default user-reset">重置</button>
-                <button type="button" class="btn btn-default user-sure">确认筛选</button>
-                <button type="button" class="btn btn-default user-advanced">高级筛选</button>
-                <button type="button" class="btn btn-default user-show">显示/隐藏字段</button>
-                <!-- 显示/隐藏字段 -->
-                <div class='chioce'>
-                  <div>
-                    <input type="checkbox" class='all-select' @change='changeAll($event)' checked>
-                    <span>全选</span>
-                  </div>
-                  <ul>
-                    <li v-for='item in thead'>
-                      <input type="checkbox" class='single-select' @change='changeCol($event,item.id)' checked>
-                      <span>{{ item.name }}</span>
-                    </li>
-                    <li>
-                      <button type='button' class='btn btn-default btn-pass'>取消</button>
-                      <button type='button' class='btn btn-default btn-save'>保存设置</button>
-                    </li>
-                  </ul>
+
+        <div class="collect">
+          <div class="container-fluid form-inline form-section">
+            <div class="row">
+              <div class="col-md-12">
+                <dic class="form-group col-md-3">
+                  <label for="">主账号</label>
+                  <input type="text" class='form-control' v-model='collect.account'>
+                </dic>
+                <dic class="form-group col-md-3">
+                  <label for="">公司名称</label>
+                  <input type="text" class='form-control' v-model='collect.company'>
+                </dic>
+                <dic class="form-group col-md-3">
+                  <label for="">联系电话</label>
+                  <input type="text" class='form-control' v-model='collect.tel'>
+                </dic>
+                <dic class="form-group col-md-3">
+                  <label for="">服务阶段</label>
+                  <select name="" id="" class='form-control' v-model='collect.stage'>
+                    <option value="1">新客期</option>
+                    <option value="2">服务期</option>
+                    <option value="3">流转期</option>
+                  </select>
+                </dic>
+              </div>
+              <div class="col-md-12">
+                <dic class="form-group col-md-3">
+                  <label for="">领用人</label>
+                  <input type="text" class='form-control' v-model='collect.user'>
+                </dic>
+                <dic class="form-group col-md-3">
+                  <label for="">id</label>
+                  <input type="text" class='form-control' v-model='collect.userid'>
+                </dic>
+                <dic class="form-group col-md-3">
+                  <label for="">qq</label>
+                  <input type="text" class='form-control' v-model='collect.qq'>
+                </dic>
+                <dic class="form-group col-md-3">
+                  <label for="">网站来源</label>
+                  <select name="" id="" class='form-control' v-model='collect.source'>
+                    <option value="1">服装</option>
+                    <option value="2">鞋子</option>
+                    <option value="3">箱包</option>
+                    <option value="4">首饰</option>
+                    <option value="5">家纺</option>
+                  </select>
+                </dic>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group col-md-3">
+                  <label for="">品类</label>
+                  <select name="" id="" class='form-control' v-model='collect.category'>
+                    <option value="1">服装</option>
+                    <option value="2">鞋子</option>
+                    <option value="3">箱包</option>
+                    <option value="4">首饰</option>
+                    <option value="5">家纺</option>
+                  </select>
                 </div>
-              </td>
-            </tr>
-          </table>
+                <div class='form-group col-md-8'>
+                  <div class='pull-right'>
+                    <button type="reset" class="btn btn-default user-reset">重置</button>
+                    <button type="button" class="btn btn-default user-sure">确认筛选</button>
+                    <button type="button" class="btn btn-default user-advanced">高级筛选</button>
+                    <button type="button" class="btn btn-default user-show">显示/隐藏字段</button>
+                  </div>
+                  <!--显示隐藏字段  -->
+                  <div class='chioce'>
+                    <div>
+                      <input type="checkbox" class='all-select' @change='changeAll($event)' checked>
+                      <span>全选</span>
+                    </div>
+                    <ul>
+                      <li v-for='item in thead'>
+                        <input type="checkbox" class='single-select' @change='changeCol($event,item.id)'>
+                        <span>{{ item.name }}</span>
+                      </li>
+                      <li>
+                        <button type='button' class='btn btn-default btn-pass'>取消</button>
+                        <button type='button' class='btn btn-default btn-save'>保存设置</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info">
+              <table class='table table-bordered table-hover'>
+                <thead>
+                  <tr>
+                    <th width='1%'>
+                      <input type="checkbox" class='info-all'>
+                    </th>
+                    <th width='10%'>操作</th>
+                    <th v-for='item in thead' v-if="item.is_show">{{ item.name }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align='center' v-for='item in list'>
+                    <td :data-id='item.id'>
+                      <input type="checkbox" class='info-single'>
+                    </td>
+                    <td>
+                      <a href="../customer/clientdetail.html">查看</a>
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.Company }}</td>
+                    <td>{{ item.visited }}</td>
+                    <td>{{ item.login }}</td>
+                    <td>{{ item.receive }}</td>
+                    <td>{{ item.time }}</td>
+                  </tr>
+                </tbody>
+              </table>
 
+            </div>
+            <div id="test1" class='pull-right'></div>
+          </div>
         </div>
-        <!-- 客户列表 -->
-        <div class='info'>
-          <table border>
-            <thead>
-              <tr>
-                <th width='1%'>
-                  <input type="checkbox" class='info-all'>
-                </th>
-                <th width='10%'>操作</th>
-                <th v-for='item in thead' v-if="item.is_show">{{ item.name }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr align='center' v-for='item in list'>
-                <td :data-id='item.id'>
-                  <input type="checkbox" class='info-single'>
-                </td>
-                <td>
-                  <a href="../customer/clientdetail.html">查看</a>
-                </td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.Company }}</td>
-                <td>{{ item.visited }}</td>
-                <td>{{ item.login }}</td>
-                <td>{{ item.receive }}</td>
-                <td>{{ item.time }}</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-        <div id="test1" class='pull-right'></div>
+        <footer>
+          <p>Copyright &copy; 2016.Company name All rights reserved.More Templates
+            <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
+            <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+          </p>
+        </footer>
+        <!-- /. PAGE WRAPPER  -->
       </div>
-      <footer>
-        <p>Copyright &copy; 2016.Company name All rights reserved.More Templates
-          <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
-          <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-        </p>
-      </footer>
-      <!-- /. PAGE WRAPPER  -->
     </div>
-  </div>
-  <!-- /. WRAPPER  -->
-  <!-- JS Scripts-->
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
 
-  <script type="text/javascript" src="../../js/lib/require/require.js"></script>
-  <script type="text/javascript" src="../../js/common/main.js"></script>
-  <script>
-    require(['../../js/workbench/userlist.js'])
-  </script>
+    <script type="text/javascript" src="../../js/lib/require/require.js"></script>
+    <script type="text/javascript" src="../../js/common/main.js"></script>
+    <script>
+      require(['../../js/workbench/userlist.js'])
+    </script>
 </body>
 
 </html>

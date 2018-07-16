@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>客户管理</title>
+    <title>任务管理</title>
     <!-- Bootstrap Styles-->
     <link href="../../css/common/base.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../js/lib/layui/css/layui.css">
@@ -555,49 +555,49 @@
                             <div class="col-md-12">
                                 <div class='pull-right'>
                                     <button type="button" class="btn btn-primary js-reset">重置</button>
-                                    <button type="button" class="btn btn-primary js-filter">确认筛选</button>
-                                    <button type="button" class="btn btn-primary js-isshow">显示/隐藏字段</button>
+                                    <button type="button" class="btn btn-primary" >确认筛选</button>
+                                    <button type="button" class="btn btn-primary" @click='toggleSelect'>显示/隐藏字段</button>
                                 </div>
                                 <!--显示隐藏字段  -->
-                                <div class='choice'>
+                                <div class='choice' :style="{'display':list_info.is_show_select?'block':'none'}">
                                     <div>
-                                        <input type="checkbox">
+                                        <input type="checkbox" @change='changeAll($event)' v-model="list_info.checked_all">
                                         <span>全选</span>
                                     </div>
                                     <ul>
                                         <li v-for='item in taskTh'>
-                                            <input type="checkbox" class='single-select'>
+                                            <input type="checkbox" @change='changeCol($event,item.id)' v-model="item.is_show">
                                             <span>{{ item.name }}</span>
                                         </li>
                                         <li>
                                             <button type='button' class='btn btn-default'>取消</button>
-                                            <button type='button' class='btn btn-default'>保存设置</button>
+                                            <button type='button' class='btn btn-primary'>保存设置</button>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="taskinfo">
-                            <table class='table table-bordered table-hover'>
+                            <table class='table table-bordered table-hover js-list-table'>
                                 <thead>
                                     <tr>
-                                        <th width='1%'>
+                                        <th class="js-col1-ele">
                                             <input type="checkbox">
                                         </th>
-                                        <th width='10%'>操作</th>
-                                        <th v-for='item in taskTh'>{{ item.name }}</th>
+                                        <th class="js-col2-ele">操作</th>
+                                        <th v-for='item in taskTh' :class="'js-col'+item.id+'-ele js-can-hide'" v-if="item.is_show">{{ item.name }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr align='center' v-for='item in taskTb'>
-                                        <td :data-id='item.id'>
+                                        <td class="js-col1-ele" :data-id='item.id'>
                                             <input type="checkbox">
                                         </td>
-                                        <td>
+                                        <td class="js-col2-ele" data-key="col1">
                                             <a href="../customer/clientdetail.html">查看</a>
                                         </td>
-                                        <td>{{ item.title }}</td>
-                                        <td>{{ item.type }}</td>
+                                        <td class="js-col3-ele js-can-hide">{{ item.title }}</td>
+                                        <td >{{ item.type }}</td>
                                         <td>{{ item.roll }}</td>
                                         <td>{{ item.clientNum }}</td>
                                         <td>{{ item.successNum }}</td>

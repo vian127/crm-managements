@@ -139,7 +139,7 @@ th {
     z-index: 3;
 }
 
-.chioce {
+.choice {
     position: absolute;
     top: 40px;
     right: 0;
@@ -150,11 +150,11 @@ th {
     padding: 10px 10px 10px 20px;
     display: none;
 }
-.chioce li {
+.choice li {
     height: 30px;
     line-height: 30px;
 }
-.chioce span {
+.choice span {
     padding-left: 10px;
     vertical-align:middle;
     font-size: 12px;
@@ -163,7 +163,7 @@ th {
     padding-left: 10px;
 }
 
-.chioce input {
+.choice input {
     vertical-align:middle;
     margin: 0;
 }

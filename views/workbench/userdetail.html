@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>客户管理</title>
+  <title>客户详情</title>
   <!-- Bootstrap Styles-->
   <link href="../../css/common/base.css" rel="stylesheet" />
   <link href="../../css/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -328,7 +328,7 @@
                     </a>
                     <ul class="nav nav-third-level nav-3">
                       <li>
-                        <a href="#">任务管理</a>
+                        <a href="../manage/taskmanagement.html">任务管理</a>
                       </li>
                       <li>
                         <a href="#">新增任务
@@ -336,18 +336,18 @@
                         </a>
                         <ul class="nav nav-third-level nav-4">
                           <li>
-                            <a href="#">新增任务</a>
+                            <a href="../manage/addtask.html">新增任务</a>
                           </li>
                           <li>
-                            <a href="#">添加任务客户</a>
+                            <a href="../manage/newcustomers.html">添加任务客户</a>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="#">查看任务-指派/终止/验收</a>
+                        <a href="../manage/taskstatistical.html">任务统计详情</a>
                       </li>
                       <li>
-                        <a href="#">查看任务-仅查看</a>
+                        <a href="../manage/viewtask.html">查看任务详情-指派/终止/验收</a>
                       </li>
                     </ul>
                   </li>
@@ -359,10 +359,10 @@
                 </a>
                 <ul class="nav nav-third-level">
                   <li>
-                    <a href="#">任务类型管理</a>
+                    <a href="../manage/tasktype.html">任务类型管理</a>
                   </li>
                   <li>
-                    <a href="#">任务类型详情</a>
+                    <a href="../manage/tasktypedetail.html">任务类型详情</a>
                   </li>
                 </ul>
               </li>
@@ -514,7 +514,7 @@
           <div class="row">
             <div class='col-md-12'>
               <div class="form-group col-md-4">
-                <label for="">主账号</label> 
+                <label for="">主账号</label>
                 <input type="text" class="form-control" v-model='material.account'>
               </div>
               <div class="form-group col-md-4">

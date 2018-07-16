@@ -366,15 +366,5 @@ ul.dropdown-menu.dropdown-messages li a div {
     padding-left: 91px !important;
 }
 
-/*清除浮动*/
-.clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
-  }
-  
-  .clearfix:after {
-    clear: both;
-  }
-th {
-    text-align: center;
-}
+th,td{text-align: center;}
+thead{background-color: #cce1f5;}

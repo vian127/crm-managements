@@ -5,7 +5,7 @@
 */
 require(['vue','layui'], function (Vue,layui) {
     $(function () {
-        var vm = new Vue({ 
+        var vm = new Vue({
             el: '#app',
             data:{
                 list:[{id: 1,is_show:true,check: '编辑',name: '12112',Company: '上海织纺',visited: '2018-6-6',login: '2018-5-1',receive:'ml',time:'2018-12-12 12:12'},

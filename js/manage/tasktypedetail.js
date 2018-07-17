@@ -1,7 +1,7 @@
 /*
     #author     lut000
     #date       2017/07/16
-    #purpose    新增任务类型
+    #porpuse    新增任务类型
 */
 require.config({
     paths:{

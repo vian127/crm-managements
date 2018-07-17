@@ -1,6 +1,6 @@
 /*
 	#author		lut000
-	#date 		2018/01/06
+	#date 		2018/07/05
     #porpuse    共用入口
 */
 require.config({

@@ -1,7 +1,7 @@
 /*
     #author     lut000
     #date       2017/07/16
-    #purpose    客户列表
+    #porpuse    客户列表
 */
 require(['vue','layui'], function (Vue,layui) {
     $(function () {

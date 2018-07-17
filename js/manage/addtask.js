@@ -109,10 +109,19 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                           }
                       });
                   });
-              }
+              },
+              dateTime:function(){
+                layui.use('laydate', function(){
+                    var laydate = layui.laydate;
+                    laydate.render({
+                      elem: '#js-tasklimit'
+                    });
+                });
+              },
           },
           created(){
-              this.page()
+              this.page();
+              this.dateTime();
           }
       })
      

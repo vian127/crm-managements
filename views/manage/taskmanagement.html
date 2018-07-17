@@ -527,9 +527,9 @@
                 <div class="col-md-12 text-right">
                     <a href='./addtask.html' class="btn btn-primary" title="新增任务">新增任务</a>
                     <button class="btn btn-default" title="批量指派" @click='assignFunc'>批量指派</button>
-                    <button class="btn btn-warning" title="批量不通过">批量不通过</button>
-                    <button class="btn btn-success" title="批量通过">批量通过</button>
-                    <button class="btn btn-danger" title="批量终止">批量终止</button>
+                    <button class="btn btn-warning" title="批量不通过" @click='failFunc'>批量不通过</button>
+                    <button class="btn btn-success" title="批量通过" @click='passFunc'>批量通过</button>
+                    <button class="btn btn-danger" title="批量终止" @click='endFunc'>批量终止</button>
                 </div>
 
                 <!-- 表单部分 -->
@@ -592,7 +592,7 @@
                             <div class='pull-right'>
                                 <button type="reset" class="btn btn-default">重置</button>
                                 <button type="button" class="btn btn-primary" @click="filterFunc">确认筛选</button>
-                                <button type="button" class="btn btn-default">高级筛选</button>
+                                <button type="button" class="btn btn-default" @click='expertFunc'>高级筛选</button>
                                 <button type="button" class="btn btn-default" @click='toggleSelect'>显示/隐藏字段</button>
                             </div>
                         </div>
@@ -671,5 +671,90 @@
         require(['../../js/manage/taskmanagement.js'])
     </script>
 </body>
+<div class="container-fluid dialog-batch">
+    <!-- 高级筛选 -->
+    <div class="row">
+        <div class="" id="js-expert">
+            <div class='expert'>
+            <div class="col-md-12">
+                <h4>高级筛选项</h4>
+            </div>
+            <div class="col-md-12">
+                <label for="">任务期限</label>
+                <input type="text"> ~
+                <input type="text">
+            </div>
+            <div class="col-md-12">
+                <label for="">任务期限</label>
+                <input type="text"> ~
+                <input type="text">
+            </div>
+            <div class="col-md-12">
+                <label for="">创建人</label>
+                <input type="text">
+            </div>
+            <div class="col-md-12">
+                <label for="">执行人</label>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 批量指派 -->
+    <div class="row">
+        <div id="js-assign">
+            <div class="col-md-12 dis-bottom">
+                <h4>将任务指派给：</h4>
+            </div>
+            <div class="col-md-10">
+                <select name="" id="" class='form-control'>
+                    <option value="1">客户经理</option>
+                    <option value="2">客户经理</option>
+                    <option value="3">客户经理</option>
+                    <option value="4">客户经理</option>
+                    <option value="5">客户经理</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- 批量未通过 -->
+    <div class="row">
+        <div id="js-fail">
+            <div class="col-md-12 dis-bottom">
+                <h4>正在退回任务</h4>
+            </div>
+            <div class="col-md-12">
+                <font style='color:red'>*</font>
+                <label for="">退回原因</label>
+                <textarea name="" id="fail" cols="30%" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <!-- 批量通过 -->
+    <div class="row">
+        <div id="js-pass">
+            <div class="col-md-12 dis-bottom">
+                <h4>正在审核通过</h4>
+            </div>
+            <div class="col-md-12 dis-bottom">
+                <label>任务是否确认通过？</label>
+            </div>
+
+        </div>
+    </div>
+    <!-- 批量终止 -->
+    <div class="row">
+        <div id="js-end">
+            <div class="col-md-12 dis-bottom">
+                <h4>确定要终止任务？</h4>
+            </div>
+            <div class="col-md-12">
+                <font style='color:red'>*</font>
+                <label for="">终止原因</label>
+                <textarea name="" id="" cols="30%" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
 
 </html>

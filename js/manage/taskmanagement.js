@@ -111,15 +111,82 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         });
                     });
                 },
+                expertFunc:function(){
+                    var layer = layui.layer;
+                    layer.open({
+                        type:0,
+                        title:'',
+                        area: ['500px', '300px'],
+                        btn:['取消','确认'],
+                        btnAlign: 'c',
+                        content: $('#js-expert').html(),
+                        btn2:function(index,layero){
+                            alert(123)
+                        }
+                    });     
+                },
                 assignFunc:function(){
-                    alert(11)
+                        var layer = layui.layer;
+                        layer.open({
+                            type:0,
+                            title:'',
+                            area: ['400px', '200px'],
+                            btn:['取消','确认'],
+                            btnAlign: 'c',
+                            content: $('#js-assign').html(),
+                            btn2:function(index,layero){
+                                alert(123)
+                            }
+                        });     
+                },
+                failFunc:function(){
+                    var layer = layui.layer;
+                    layer.open({
+                        type:0,
+                        title:'',
+                        area: ['400px', '200px'],
+                        btn:['取消','确认'],
+                        btnAlign: 'c',
+                        content: $('#js-fail').html(),
+                        btn2:function(index,layero){
+                         var result=$('#js-fail textarea').text();
+                         console.log(layero)
+                        }
+                    });     
+                },
+                passFunc:function(){
+                    var layer = layui.layer;
+                    layer.open({
+                        type:0,
+                        title:'',
+                        area: ['300px', '150px'],
+                        btn:['取消','确认'],
+                        btnAlign: 'c',
+                        content: $('#js-pass').html(),
+                        btn2:function(index,layero){
+                            alert(123)
+                        }
+                    });     
+                },
+                endFunc:function(){
+                    var layer = layui.layer;
+                    layer.open({
+                        type:0,
+                        title:'',
+                        area: ['400px', '200px'],
+                        btn:['取消','确认'],
+                        btnAlign: 'c',
+                        content: $('#js-end').html(),
+                        btn2:function(index,layero){
+                            alert(123)
+                        }
+                    });  
                 }
             },
             created(){
-                this.page()
+                this.page();
+                layui.use('layer');
             }
-        })
-       
-       
+        })  
     })
 })

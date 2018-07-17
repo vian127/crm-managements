@@ -130,7 +130,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         layer.open({
                             type:0,
                             title:'',
-                            area: ['400px', '200px'],
+                            area: ['400px', '220px'],
                             btn:['取消','确认'],
                             btnAlign: 'c',
                             content: $('#js-assign').html(),
@@ -144,7 +144,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                     layer.open({
                         type:0,
                         title:'',
-                        area: ['400px', '200px'],
+                        area: ['400px', '220px'],
                         btn:['取消','确认'],
                         btnAlign: 'c',
                         content: $('#js-fail').html(),
@@ -159,7 +159,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                     layer.open({
                         type:0,
                         title:'',
-                        area: ['300px', '150px'],
+                        area: ['350px', '180px'],
                         btn:['取消','确认'],
                         btnAlign: 'c',
                         content: $('#js-pass').html(),
@@ -173,7 +173,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                     layer.open({
                         type:0,
                         title:'',
-                        area: ['400px', '200px'],
+                        area: ['400px', '220px'],
                         btn:['取消','确认'],
                         btnAlign: 'c',
                         content: $('#js-end').html(),

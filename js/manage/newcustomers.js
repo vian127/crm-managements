@@ -11,12 +11,12 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
           data() {
             return  infoAll={
                   taskTh:[
-                      {id:3,is_show:true,name:'主账号'},
-                      {id:4,is_show:true,name:'公司名称'},
-                      {id:5,is_show:true,name:'未回访天数'},
-                      {id:6,is_show:true,name:'未登录天数'},
-                      {id:7,is_show:true,name:'领用人'},
-                      {id:8,is_show:true,name:'领用时间'}
+                      {id:2,is_show:true,name:'主账号'},
+                      {id:3,is_show:true,name:'公司名称'},
+                      {id:4,is_show:true,name:'未回访天数'},
+                      {id:5,is_show:true,name:'未登录天数'},
+                      {id:6,is_show:true,name:'领用人'},
+                      {id:7,is_show:true,name:'领用时间'}
                   ],
                   taskTb:[
                       {id:1,account:'skyblue',company:'上海服装服务有限公司',visit:'5',login:'5',receive:'6',time:'2018-12-12 12:12:12'},

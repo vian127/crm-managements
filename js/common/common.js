@@ -23,32 +23,40 @@
             });
 
 
-            
+            this.bindFunc();
         },
 
         initialization: function () {
             mainApp.initFunction();
 
+        },
+
+        bindFunc:function(){                                                        //事件绑定
+            // 展开左侧
+            $("#sideNav").on('click',function(){
+                if($(this).hasClass('closed')){
+                    $('.navbar-side').animate({left: '0px'});
+                    $(this).removeClass('closed');
+                    $('#page-wrapper').animate({'margin-left' : '260px'});
+                    
+                }
+                else{
+                    $(this).addClass('closed');
+                    $('.navbar-side').animate({left: '-260px'});
+                    $('#page-wrapper').animate({'margin-left' : '0px'}); 
+                }
+            });
+            // 返回上页
+            $('.js-back-btn').on('click',function(){
+                window.history.back(-1);
+            });
         }
 
     }
     // Initializing ///
 
     $(document).ready(function () {
-        mainApp.initFunction(); 
-		$("#sideNav").click(function(){
-			if($(this).hasClass('closed')){
-				$('.navbar-side').animate({left: '0px'});
-				$(this).removeClass('closed');
-				$('#page-wrapper').animate({'margin-left' : '260px'});
-				
-			}
-			else{
-			    $(this).addClass('closed');
-				$('.navbar-side').animate({left: '-260px'});
-				$('#page-wrapper').animate({'margin-left' : '0px'}); 
-			}
-		});
+        mainApp.initFunction();
     });
 
 }(jQuery));

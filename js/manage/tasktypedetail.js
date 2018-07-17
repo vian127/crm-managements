@@ -1,7 +1,7 @@
 /*
     #author     lut000
     #date       2017/07/16
-    #purpose    新增任务类型
+    #porpuse    新增任务类型
 */
 require.config({
     paths:{
@@ -18,7 +18,7 @@ require.config({
         }
     }
 });
-require(['jquery','vue','ztree-excheck','ztree-exhide'], function (jquery,Vue) {
+require(['jquery','vue','msg','ztree-excheck','ztree-exhide'], function (jquery,Vue,msg) {
     $(function () {
         var vm = new Vue({
             el: '#app',
@@ -57,7 +57,6 @@ require(['jquery','vue','ztree-excheck','ztree-exhide'], function (jquery,Vue) {
                     var self=this,d=self.def;
                     // 点击获取焦点
                     $('.js-checked-list').on('click',function(e){
-                        console.log(111)
                         var $self=$(this),tag_ele=$self.siblings('.js-filter-div');
                         var id=tag_ele.attr('data-id');
                         if(d.trees[id]==undefined){
@@ -109,6 +108,13 @@ require(['jquery','vue','ztree-excheck','ztree-exhide'], function (jquery,Vue) {
                     };
 
                 },
+                saveFunc:function(e){                                                           //保存
+                    var tag=e.target;
+                    console.log(this.collect)
+                    msg.msg({'txt':'保存成功'},function(){
+                        window.history.back(-1);
+                    },1200)
+                }
             },
             mounted:function(){
                 this.bindFunc();

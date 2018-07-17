@@ -650,31 +650,18 @@
                     <table class='table table-bordered table-hover js-list-table'>
                         <thead>
                             <tr>
-                                <th class="js-col1-ele">
-                                    <input type="checkbox">
-                                </th>
-                                <th class="js-col2-ele">操作</th>
-                                <th v-for='item in taskTh' :class="'js-col'+item.id+'-ele js-can-hide'" v-if="item.is_show">{{ item.name }}</th>
+                                <th>日期</th>
+                                <th>操作类型</th>
+                                <th>操作人</th>
+                                <th>操作内容</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr align='center' v-for='item in taskTb'>
-                                <td class="js-col1-ele" :data-id='item.id'>
-                                    <input type="checkbox">
-                                </td>
-                                <td class="js-col2-ele" data-key="col1">
-                                    <a href="./viewtask.html">编辑</a>
-                                </td>
-                                <td class="js-col3-ele js-can-hide">{{ item.title }}</td>
-                                <td class="js-col4-ele js-can-hide">{{ item.type }}</td>
-                                <td class="js-col5-ele js-can-hide">{{ item.roll }}</td>
-                                <td class="js-col6-ele js-can-hide">{{ item.clientNum }}</td>
-                                <td class="js-col7-ele js-can-hide">{{ item.successNum }}</td>
-                                <td class="js-col8-ele js-can-hide">{{ item.executory }}</td>
-                                <td class="js-col9-ele js-can-hide">{{ item.noAssigned }}</td>
-                                <td class="js-col10-ele js-can-hide">{{ item.created }}</td>
-                                <td class="js-col11-ele js-can-hide">{{ item.limit }}</td>
-                                <td class="js-col12-ele js-can-hide">{{ item.creater }}</td>
+                                <td>{{ item.time}}</td>
+                                <td>{{ item.type}}</td>
+                                <td>{{ item.name}}</td>
+                                <td>{{ item.content }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -695,9 +682,7 @@
 
     <script type="text/javascript" src="../../js/lib/require/require.js"></script>
     <script type="text/javascript" src="../../js/common/main.js"></script>
-    <script>
-        require(['../../js/manage/taskmanagement.js'])
-    </script>
+    <script type="text/javascript" src="../../js//manage/viewtask.js"></script>
 </body>
 
 </html>

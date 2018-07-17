@@ -33,11 +33,12 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                     ],
                     taskFilter:{
                         title:'客服',
-                        type:'1',
-                        timeStart:'2017-12-11',
-                        timeEnd:'2017-12-12',
-                        limitStart:'2018-01-01',
-                        limitEnd:'2018-02-02',
+                        roll:'1',
+                        stage:'1',
+                        rollName:'问卷名称',
+                        principal:'1',
+                        execute:'1',
+                        company:'11',
                     },
                     list_info:{
                         is_show_select:false,
@@ -93,7 +94,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                 },
 
                 filterFunc:function(){                                                      //确认筛选列表
-                    console.log(this.collect);
+                    console.log(this.taskFilter);
                 },
                 page:function(){
                     layui.use('laypage', function () {
@@ -109,6 +110,9 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                             }
                         });
                     });
+                },
+                assignFunc:function(){
+                    alert(11)
                 }
             },
             created(){

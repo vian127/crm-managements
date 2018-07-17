@@ -347,12 +347,22 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="./taskstatistical.html">任务统计详情</a>
-                                            </li>
-                                            <li>
                                                 <a href="./viewtask.html">查看任务-指派/终止/验收</a>
                                             </li>
                                         </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">任务统计管理
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="./taskstatistical.html">任务统计管理</a>
+                                    </li>
+                                    <li>
+                                        <a href="./statisticaldetail.html">任务统计详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -511,110 +521,137 @@
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-            <!-- 页面位置 -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class='header-title'>任务统计管理</h3>
-                </div>
-            </div>
             <!-- 内容 -->
-            <div class="content" id='app'>
-                <!-- 筛选条件 -->
-                <div class="collect">
-                    <div class="container-fluid">
-                        <form class='js-form'>
-                            <div class="row form-inline form-section">
-                                <div class="col-md-12">
-                                    <div class="pull-right">
-                                        <a href='./addtask.html' type="button" class="btn btn-primary">新增任务</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-4">
-                                        <label for="">任务标题</label>
-                                        <input type="text" class='form-control' v-model='taskFilter.title'>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="">任务类型</label>
-                                        <select name="" id="" class='form-control' v-model='taskFilter.type'>
-                                            <option value="1">客服问卷调查</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-6">
-                                        <label for="">创建时间</label>
-                                        <input type="text" class='form-control' v-model='taskFilter.timeStart'> ~
-                                        <input type="text" class='form-control' v-model='taskFilter.timeEnd'>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="">任务期限</label>
-                                        <input type="text" class='form-control' v-model='taskFilter.limitStart'> ~
-                                        <input type="text" class='form-control' v-model='taskFilter.limitEnd'>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class='pull-right'>
-                                        <button type="reset" class="btn btn-primary">重置</button>
-                                        <button type="button" class="btn btn-primary" @click="filterFunc">确认筛选</button>
-                                        <button type="button" class="btn btn-primary" @click='toggleSelect'>显示/隐藏字段</button>
-                                    </div>
-                                    <!--显示隐藏字段  -->
-                                    <div class='choice' :style="{'display':list_info.is_show_select?'block':'none'}">
-                                        <div>
-                                            <input id="check-all" type="checkbox" @change='changeAll($event)' v-model="list_info.checked_all">
-                                            <label for="check-all">全选</label>
-                                        </div>
-                                        <ul>
-                                            <li v-for='item in taskTh'>
-                                                <input id="'check-'+item.id" type="checkbox" @change='changeCol($event,item.id)' v-model="item.is_show">
-                                                <label for="'check-'+item.id">{{ item.name }}</label>
-                                            </li>
-                                            <li class="control-item">
-                                                <button type='button' class='btn btn-default btn-sm' @click="toggleSelect">取消</button>
-                                                <button type='button' class='btn btn-primary btn-sm'>保存设置</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="taskinfo">
-                            <table class='table table-bordered table-hover js-list-table'>
-                                <thead>
-                                    <tr>
-                                        <th class="js-col1-ele">
-                                            <input type="checkbox">
-                                        </th>
-                                        <th class="js-col2-ele">操作</th>
-                                        <th v-for='item in taskTh' :class="'js-col'+item.id+'-ele js-can-hide'" v-if="item.is_show">{{ item.name }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr align='center' v-for='item in taskTb'>
-                                        <td class="js-col1-ele" :data-id='item.id'>
-                                            <input type="checkbox">
-                                        </td>
-                                        <td class="js-col2-ele" data-key="col1">
-                                            <a href="../customer/clientdetail.html">查看</a>
-                                        </td>
-                                        <td class="js-col3-ele js-can-hide">{{ item.title }}</td>
-                                        <td class="js-col4-ele js-can-hide">{{ item.type }}</td>
-                                        <td class="js-col5-ele js-can-hide">{{ item.roll }}</td>
-                                        <td class="js-col6-ele js-can-hide">{{ item.clientNum }}</td>
-                                        <td class="js-col7-ele js-can-hide">{{ item.successNum }}</td>
-                                        <td class="js-col8-ele js-can-hide">{{ item.executory }}</td>
-                                        <td class="js-col9-ele js-can-hide">{{ item.noAssigned }}</td>
-                                        <td class="js-col10-ele js-can-hide">{{ item.created }}</td>
-                                        <td class="js-col11-ele js-can-hide">{{ item.limit }}</td>
-                                        <td class="js-col12-ele js-can-hide">{{ item.creater }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="test1" class='pull-right'></div>
-                    </div>
+            <div class="content container-fluid form-section" id='app'>
+                <h3 class='col-md-12 page-name'>任务管理</h3>
+                <div class="col-md-12 text-right">
+                    <a href='./addtask.html' class="btn btn-primary" title="新增任务">新增任务</a>
+                    <button class="btn btn-default" title="批量指派" @click='assignFunc'>批量指派</button>
+                    <button class="btn btn-warning" title="批量不通过">批量不通过</button>
+                    <button class="btn btn-success" title="批量通过">批量通过</button>
+                    <button class="btn btn-danger" title="批量终止">批量终止</button>
                 </div>
+
+                <!-- 表单部分 -->
+                <form class='form-inline form-section row'>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-3">
+                            <label for="">任务标题</label>
+                            <input type="text" class='form-control' v-model='taskFilter.title'>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">任务类型</label>
+                            <select name="" id="" class='form-control' v-model='taskFilter.roll'>
+                                <option value="1">客服问卷调查</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">任务状态</label>
+                            <select name="" id="" class='form-control' v-model='taskFilter.stage'>
+                                <option value="1">待指派</option>
+                                <option value="2">执行中</option>
+                                <option value="3">已完成</option>
+                                <option value="4">验收中</option>
+                                <option value="5">审核不通过</option>
+                                <option value="6">已终止</option>
+                                <option value="7">待修改</option>
+                                <option value="8">重新执行</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">问卷名称</label>
+                            <input type="text" class='form-control' v-model='taskFilter.rollName'>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-3">
+                            <label for="">当前负责人</label>
+                            <select name="" id="" class='form-control' v-model='taskFilter.principal'>
+                                <option value="1">客服A</option>
+                                <option value="2">客服B</option>
+                                <option value="3">客服主管</option>
+                                <option value="4">经理</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">执行人</label>
+                            <select name="" id="" class='form-control' v-model='taskFilter.execute'>
+                                <option value="1">客服A</option>
+                                <option value="2">客服B</option>
+                                <option value="3">客服主管</option>
+                                <option value="4">经理</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">公司名称</label>
+                            <input type="text" class='form-control' v-model='taskFilter.company'>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <div class='pull-right'>
+                                <button type="reset" class="btn btn-default">重置</button>
+                                <button type="button" class="btn btn-primary" @click="filterFunc">确认筛选</button>
+                                <button type="button" class="btn btn-default">高级筛选</button>
+                                <button type="button" class="btn btn-default" @click='toggleSelect'>显示/隐藏字段</button>
+                            </div>
+                        </div>
+
+                        <!--显示隐藏字段  -->
+                        <div class='choice' :style="{'display':list_info.is_show_select?'block':'none'}">
+                            <div>
+                                <input id="check-all" type="checkbox" @change='changeAll($event)' v-model="list_info.checked_all">
+                                <label for="check-all">全选</label>
+                            </div>
+                            <ul>
+                                <li v-for='item in taskTh'>
+                                    <input id="'check-'+item.id" type="checkbox" @change='changeCol($event,item.id)' v-model="item.is_show">
+                                    <label for="'check-'+item.id">{{ item.name }}</label>
+                                </li>
+                                <li class="control-item">
+                                    <button type='button' class='btn btn-default btn-sm' @click="toggleSelect">取消</button>
+                                    <button type='button' class='btn btn-primary btn-sm'>保存设置</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- 列表 -->
+                <div class="col-md-12">
+                    <table class='table table-bordered table-hover js-list-table'>
+                        <thead>
+                            <tr>
+                                <th class="js-col1-ele">
+                                    <input type="checkbox">
+                                </th>
+                                <th class="js-col2-ele">操作</th>
+                                <th v-for='item in taskTh' :class="'js-col'+item.id+'-ele js-can-hide'" v-if="item.is_show">{{ item.name }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr align='center' v-for='item in taskTb'>
+                                <td class="js-col1-ele" :data-id='item.id'>
+                                    <input type="checkbox">
+                                </td>
+                                <td class="js-col2-ele" data-key="col1">
+                                    <a href="./viewtask.html">编辑</a>
+                                </td>
+                                <td class="js-col3-ele js-can-hide">{{ item.title }}</td>
+                                <td class="js-col4-ele js-can-hide">{{ item.type }}</td>
+                                <td class="js-col5-ele js-can-hide">{{ item.roll }}</td>
+                                <td class="js-col6-ele js-can-hide">{{ item.clientNum }}</td>
+                                <td class="js-col7-ele js-can-hide">{{ item.successNum }}</td>
+                                <td class="js-col8-ele js-can-hide">{{ item.executory }}</td>
+                                <td class="js-col9-ele js-can-hide">{{ item.noAssigned }}</td>
+                                <td class="js-col10-ele js-can-hide">{{ item.created }}</td>
+                                <td class="js-col11-ele js-can-hide">{{ item.limit }}</td>
+                                <td class="js-col12-ele js-can-hide">{{ item.creater }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="test1" class='pull-right'></div>
             </div>
             <footer>
                 <p>Copyright &copy; 2016.Company name All rights reserved.More Templates

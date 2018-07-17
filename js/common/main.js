@@ -67,29 +67,7 @@ require.config({
 
 
 require(["jquery", "general", "bootstrap", 'common'], function (jquery, general) {
-  $(function () {
-    var ids = [];
-    $('tbody').on('change', '.checked-single', function () {
-      var id = $(this).parent().data('id');
-      var index = ids.indexOf(id);
-      if ($(this).prop('checked')) {
-        if (index == -1) {
-          ids.push(id)
-        }
-      } else {
-        ids.splice(index, 1)
-      }
-      ids.length > 0 ? $('.btn-batch').show() : $('.btn-batch').hide();
-      var strid = ids.join();
-      $('.btn-batch').attr('data-id', strid); //缓存id
-      if (ids.length == $('.checked-single').length) {
-        $('.checked-all').prop('checked', true);
-      } else {
-        $('.checked-all').prop('checked', false);
-      }
+    $(function (){
+        console.log("ok!");
     })
-    $('.checked-all').on('click', function () {
-      $('.checked-single').prop('checked', $(this).prop('checked')).trigger('change')
-    })
-  })
 });

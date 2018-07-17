@@ -515,8 +515,8 @@
             <div class="content container-fluid" id='app'>
                 <h3 class="col-md-12 page-name">任务类型详情</h3>
                 <div class="col-md-12 text-right">
-                    <button class="btn btn-primary" title="保存">保存</button>&nbsp;&nbsp;
-                    <button class="btn btn-default" title="返回">返回</button>
+                    <button class="btn btn-primary" @click="saveFunc" title="保存">保存</button>&nbsp;&nbsp;
+                    <button class="btn btn-default js-back-btn" title="返回">返回</button>
                 </div>
                 <!-- 表单部分 -->
                 <form class="form-inline form-section row">
@@ -528,9 +528,8 @@
                         <div class="form-group col-md-3">
                             <label for="status">状态</label>
                             <select name="status" id="status" class='form-control' v-model='collect.status'>
-                                <option value="1">新客期</option>
-                                <option value="2">服务期</option>
-                                <option value="3">流转期</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
                             </select>
                         </div>
                     </div>

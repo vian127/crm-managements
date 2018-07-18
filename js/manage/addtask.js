@@ -41,7 +41,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                   }
               }
           },
-          methods:{
+          methods:{   
               toggleSelect:function(){                                                     //显示隐藏
                   this.list_info.is_show_select=!this.list_info.is_show_select;
               },

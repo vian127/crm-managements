@@ -116,7 +116,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                     layer.open({
                         type:0,
                         title:'',
-                        area: ['500px', '300px'],
+                        area: ['500px','auto'],
                         btn:['取消','确认'],
                         btnAlign: 'c',
                         content: $('#js-expert').html(),
@@ -137,14 +137,14 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                             btn2:function(index,layero){
                                 alert(123)
                             }
-                        });     
+                        });          
                 },
                 failFunc:function(){
                     var layer = layui.layer;
                     layer.open({
                         type:0,
                         title:'',
-                        area: ['400px', '220px'],
+                        area: ['400px', 'auto'],
                         btn:['取消','确认'],
                         btnAlign: 'c',
                         content: $('#js-fail').html(),
@@ -173,7 +173,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                     layer.open({
                         type:0,
                         title:'',
-                        area: ['400px', '220px'],
+                        area: ['400px', 'auto'],
                         btn:['取消','确认'],
                         btnAlign: 'c',
                         content: $('#js-end').html(),

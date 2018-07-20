@@ -89,7 +89,6 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                       $('.js-list-table').find('.js-can-hide').hide();
                       this.taskTh.forEach(item=>item.is_show=false);
                   }
->>>>>>> c69a7ec7856bf14e46e0eb8d9bddfde31a36b5fc
               },
               changeAll:function(e){
                 var tag = e.target;

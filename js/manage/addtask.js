@@ -45,12 +45,10 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                 }
               }
           },
-<<<<<<< HEAD
-          methods:{
-              createdFunc:function(){                                                      //确认筛选列表
-                  console.log(this.collect);
-=======
           methods:{   
+			  createdFunc:function(){                                                      //确认筛选列表
+				console.log(this.collect);
+			  },
               toggleSelect:function(){                                                     //显示隐藏
                   this.list_info.is_show_select=!this.list_info.is_show_select;
               },

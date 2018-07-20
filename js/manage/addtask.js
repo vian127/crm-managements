@@ -45,9 +45,53 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                 }
               }
           },
+<<<<<<< HEAD
           methods:{
               createdFunc:function(){                                                      //确认筛选列表
                   console.log(this.collect);
+=======
+          methods:{   
+              toggleSelect:function(){                                                     //显示隐藏
+                  this.list_info.is_show_select=!this.list_info.is_show_select;
+              },
+              changeCol:function(event,id){                                               //单选
+                  var tag=event.target;
+                  var is_check=tag.checked;
+                  if(is_check==true){
+                      $('.js-list-table').find('.js-col'+id+'-ele').show();
+                  }else{
+                      $('.js-list-table').find('.js-col'+id+'-ele').hide();
+                  }
+                  var checked_len=0;
+                  this.taskTh.forEach(function(item){
+                      if(id==item.id){
+                          item.is_show=is_check;
+                      }
+                      item.is_show==true?checked_len++:checked_len;
+                  });
+
+                  // 全选判断
+                  if(is_check==true){
+                      if(this.list_info.checked_all==false && checked_len==this.taskTh.length){
+                          this.list_info.checked_all=true;
+                      }
+                  }else{
+                      if(checked_len==this.taskTh.length-1 && this.list_info.checked_all==true){
+                          this.list_info.checked_all=false;
+                      }
+                  }
+              },
+              changeAll:function(e){                                                      //全选
+                  var tag = e.target;
+                  var is_check = tag.checked;
+                  if(is_check==true){
+                      $('.js-list-table').find('.js-can-hide').show();
+                      this.taskTh.forEach(item=>item.is_show=true);
+                  }else{
+                      $('.js-list-table').find('.js-can-hide').hide();
+                      this.taskTh.forEach(item=>item.is_show=false);
+                  }
+>>>>>>> c69a7ec7856bf14e46e0eb8d9bddfde31a36b5fc
               },
               changeAll:function(e){
                 var tag = e.target;

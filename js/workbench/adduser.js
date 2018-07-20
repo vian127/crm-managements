@@ -113,12 +113,7 @@ require(['vue','msg','layui'], function (Vue,msg) {
                             // window.location.href='../../views/workbench/userdetail.html'
                         },1000)
                     },
-               
-                   
                 }
-                
-               
-
         })
 
 

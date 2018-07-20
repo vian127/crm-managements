@@ -12,24 +12,26 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
               return  infoAll={
                     taskTh:[
                         {id:3,is_show:true,name:'任务标题'},
-                        {id:4,is_show:true,name:'任务类型'},
-                        {id:5,is_show:true,name:'问卷'},
-                        {id:6,is_show:true,name:'任务客户数'},
-                        {id:7,is_show:true,name:'已完成数量'},
-                        {id:8,is_show:true,name:'执行中数量'},
-                        {id:9,is_show:true,name:'待指派数量'},
-                        {id:10,is_show:true,name:'创建时间'},
+                        {id:4,is_show:true,name:'任务编号'},
+                        {id:5,is_show:true,name:'任务类型'},
+                        {id:6,is_show:true,name:'状态'},
+                        {id:7,is_show:true,name:'当前负责人'},
+                        {id:8,is_show:true,name:'问卷'},
+                        {id:9,is_show:true,name:'创建时间'},
+                        {id:10,is_show:true,name:'最后更新时间'},
                         {id:11,is_show:true,name:'任务期限'},
-                        {id:12,is_show:true,name:'创建人'},
+                        {id:12,is_show:true,name:'客户'},
+                        {id:13,is_show:true,name:'创建人'},
+                        {id:14,is_show:true,name:'执行人'},
                     ],
                     taskTb:[
-                        {id:1,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
-                        {id:2,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
-                        {id:3,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
-                        {id:4,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
-                        {id:5,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
-                        {id:6,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
-                        {id:7,title:'新客户',type:'调查问卷',roll:'内容',clientNum:'5',successNum:'6',executory:'7',noAssigned:'8',created:'2018-6-12 12:12:12:00',limit:'2018-12-12 12:12:00',creater:'客服经理'},
+                        {id:1,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
+                        {id:2,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
+                        {id:3,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
+                        {id:4,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
+                        {id:5,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
+                        {id:6,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
+                        {id:7,title:'新客户',num:'120',type:'调查问卷',stage:'执行中',duty:'张三',roll:'网站满意度',createdtime:'2018-7-18 12:12:00',updatetime:'2018-7-18 11:11:00',expire:'2018-10-10 10:10:00',client:'王五',creater:'ml',executor:'客服'},
                     ],
                     taskFilter:{
                         title:'客服',
@@ -111,7 +113,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         });
                     });
                 },
-                expertFunc:function(){                                     //高级筛选
+                expertFunc:function(){
                     var layer = layui.layer;
                     layer.open({
                         type:0,
@@ -125,7 +127,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         }
                     });     
                 },
-                assignFunc:function(){                                  //批量指派
+                assignFunc:function(){
                         var layer = layui.layer;
                         layer.open({
                             type:0,
@@ -139,7 +141,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                             }
                         });     
                 },
-                failFunc:function(){                                //批量未通过
+                failFunc:function(){
                     var layer = layui.layer;
                     layer.open({
                         type:0,
@@ -154,7 +156,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         }
                     });     
                 },
-                passFunc:function(){                            //批量通过
+                passFunc:function(){
                     var layer = layui.layer;
                     layer.open({
                         type:0,
@@ -168,7 +170,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         }
                     });     
                 },
-                endFunc:function(){                              //批量终止
+                endFunc:function(){
                     var layer = layui.layer;
                     layer.open({
                         type:0,

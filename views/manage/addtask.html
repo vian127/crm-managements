@@ -525,8 +525,8 @@
             <div class="content container-fluid" id='app'>
                 <h3 class='col-md-12 page-name'>新增任务</h3>
                 <div class="col-md-12 text-right">
-                    <button class="btn btn-primary" title="新增任务类型">取消</button>
-                    <button class="btn btn-primary" title="新增任务类型">新建任务</button>
+                    <button class="btn btn-default" title="取消">取消</button>
+                    <a href='./statisticaldetail.html'class="btn btn-primary" title="确认创建" @click='createdFunc'>确认创建</a>
                 </div>
                 <!-- 表单部分 -->
                 <form class='form-inline form-section row'>
@@ -534,32 +534,32 @@
                         <div class="form-group col-md-4">
                             <font color="red">*</font>
                             <label for="">任务类型</label>
-                            <select name="" id="" class='form-control'>
+                            <select name="" id="" class='form-control' v-model='collect.type'>
                                 <option value="1">任务类型</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <font color="red">*</font>
                             <label for="">任务标题</label>
-                            <input type="text" class='form-control'>
+                            <input type="text" class='form-control' v-model='collect.title'>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group col-md-12">
                             <label for="">任务描述</label>
-                            <textarea name="" id="" cols="100%" rows="3" class='form-control'></textarea>
+                            <textarea name="" id="" cols="100%" rows="3" class='form-control' v-model='collect.desc'></textarea>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
                             <font color="red">*</font>
                             <label for="">任务期限</label>
-                            <input type="text" class="layui-input form-control" id="js-tasklimit">
+                            <input type="text" class="layui-input form-control" id="js-tasklimit" v-model='collect.expire'>
                         </div>
                         <div class="form-group col-md-4">
                             <font color="red">*</font>
                             <label for="">指派给</label>
-                            <select name="" id="" class='form-control'>
+                            <select name="" id="" class='form-control' v-model='collect.assign'>
                                 <option value="1">张三</option>
                             </select>
                         </div>
@@ -570,13 +570,13 @@
                             <label for="">任务对象</label>
                         </div>
                         <div class="form-group col-md-4">
-                            <label>已添加<u>11</u>个任务对象</label>
-                            <label>已选中<u>123</u>个任务对象</label>
+                            <label>已添加<u>{{ taskNum.add }}</u>个任务对象</label>
+                            <label>已选中<u>{{ taskNum.select }}</u>个任务对象</label>
                         </div>
                         <div class="form-group col-md-3">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-primary">添加客户</button>
-                                <button type="button" class="btn btn-primary">确认添加</button>
+                                <a href='./newcustomers.html' type="button" class="btn btn-primary">添加客户</a>
+                                <button type="button" class="btn btn-default">删除选中</button>
                             </div>
                         </div>
                     </div>
@@ -588,7 +588,7 @@
                         <thead>
                             <tr>
                                 <th width='1%'>
-                                    <input type="checkbox">
+                                    <input type="checkbox" @change='changeAll($event)' v-model="list_info.checked_all">
                                 </th>
                                 <th v-for='item in taskTh'>{{ item.name }}</th>
                             </tr>
@@ -596,7 +596,7 @@
                         <tbody>
                             <tr align='center' v-for='item in taskTb'>
                                 <td :data-id='item.id'>
-                                    <input type="checkbox">
+                                    <input type="checkbox" @change='changeCol($event,item.id)' v-model="item.is_show">
                                 </td>
                                 <td>{{ item.account }}</td>
                                 <td>{{ item.company }}</td>

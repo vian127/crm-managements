@@ -11,9 +11,11 @@
     <!-- FontAwesome Styles-->
     <link href="../../css/common/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="../../css/common/common.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../../js/lib/layui/css/layui.css">
+    <link href="../../css/common/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/common//form-list.css">
     <link rel="stylesheet" href="../../css/customer/clientdetail.css">
 </head>
 
@@ -256,28 +258,29 @@
             </ul>
         </nav>
         <!--/. NAV TOP  -->
+        <!-- 侧边栏 -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div id="sideNav" href="">
                 <i class="fa fa-caret-right"></i>
             </div>
             <div id="sidebar" class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                    <li class='active'>
+                    <li>
                         <a href="#">
                             <i class="fa fa-sitemap"></i> 客户管理
                             <span class="fa arrow"></span>
                         </a>
-                        <ul class="nav nav-second-level in nav-active">
-                            <li class='active'>
+                        <ul class="nav nav-second-level nav-active">
+                            <li>
                                 <a href="#">客户管理
                                     <span class="fa arrow"></span>
                                 </a>
-                                <ul class="nav nav-third-level in">
+                                <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="./client.html">客户管理</a>
+                                        <a href="../customer/client.html">客户管理</a>
                                     </li>
                                     <li>
-                                        <a href="./clientdetail.html">客户详情</a>
+                                        <a href="../customer/clientdetail.html">客户详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -287,10 +290,10 @@
                                 </a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="./order.html">订单管理</a>
+                                        <a href="../customer/order.html">订单管理</a>
                                     </li>
                                     <li>
-                                        <a href="./orderdetail.html">订单详情</a>
+                                        <a href="../customer/orderdetail.html">订单详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -300,10 +303,10 @@
                                 </a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="./user.html">用户管理</a>
+                                        <a href="../customer/user.html">用户管理</a>
                                     </li>
                                     <li>
-                                        <a href="./userdetail.html">用户详情</a>
+                                        <a href="../customer/userdetail.html">用户详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -326,7 +329,7 @@
                                         </a>
                                         <ul class="nav nav-third-level nav-3">
                                             <li>
-                                                <a href="#">任务管理</a>
+                                                <a href="../manage/taskmanagement.html">任务管理</a>
                                             </li>
                                             <li>
                                                 <a href="#">新增任务
@@ -334,20 +337,30 @@
                                                 </a>
                                                 <ul class="nav nav-third-level nav-4">
                                                     <li>
-                                                        <a href="#">新增任务</a>
+                                                        <a href="../manage/addtask.html">新增任务</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">添加任务客户</a>
+                                                        <a href="../manage/newcustomers.html">添加任务客户</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="#">查看任务-指派/终止/验收</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">查看任务-仅查看</a>
+                                                <a href="../manage/viewtask.html">查看任务详情-指派/终止/验收</a>
                                             </li>
                                         </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">任务统计管理
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="../manage/taskstatistical.html">任务统计管理</a>
+                                    </li>
+                                    <li>
+                                        <a href="../manage/statisticaldetail.html">任务统计详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -357,10 +370,10 @@
                                 </a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#">任务类型管理</a>
+                                        <a href="../manage/tasktype.html">任务类型管理</a>
                                     </li>
                                     <li>
-                                        <a href="#">任务类型详情</a>
+                                        <a href="../manage/tasktypedetail.html">任务类型详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -392,25 +405,25 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class='active'>
                         <a href="#">
                             <i class="fa fa-sitemap"></i> 客服工作台
                             <span class="fa arrow"></span>
                         </a>
-                        <ul class="nav nav-second-level nav-active">
+                        <ul class="nav nav-second-level in nav-active">
                             <li>
                                 <a href="#">首页-客服</a>
                             </li>
-                            <li>
+                            <li class='active'>
                                 <a href="#">我的客户-客户列表
                                     <span class="fa arrow"></span>
                                 </a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="../workbench/userlist.html">我的客户-客户列表</a>
+                                        <a href="./userlist.html">我的客户-客户列表</a>
                                     </li>
                                     <li>
-                                        <a href="../workbench/userdetail.html">我的客户-客户详情</a>
+                                        <a href="./userdetail.html">我的客户-客户详情</a>
                                     </li>
                                 </ul>
                             </li>
@@ -420,16 +433,16 @@
                                 </a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="../workbench/tasklist.html">我的任务-任务列表</a>
+                                        <a href="./tasklist.html">我的任务-任务列表</a>
                                     </li>
                                     <li>
-                                        <a href="../workbench/unclaimed.html">查看我的任务-待领取</a>
+                                        <a href="./unclaimed.html">查看我的任务-待领取</a>
                                     </li>
                                     <li>
-                                        <a href="../workbench/userdetail.html">我的任务-任务详情</a>
+                                        <a href="./userdetail.html">我的任务-任务详情</a>
                                     </li>
                                     <li>
-                                        <a href="../workbench/completed.html">查看我的任务-执行完毕</a>
+                                        <a href="./completed.html">查看我的任务-执行完毕</a>
                                     </li>
                                 </ul>
                             </li>
@@ -506,162 +519,344 @@
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-            <!-- 页面位置 -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class='header-title'>客户管理</h3>
+            <!-- content -->
+            <div class="content container-fluid" id='app'>
+                <!-- 页面位置 -->
+                <div class="page-header-section">
+                    <h3>客户管理</h3>
                 </div>
-            </div>
-            <!-- 内容 -->
-            <div class="content">
+                <div class="col-md-12 form-section" align='right'>
+                    <button type='button' class='btn btn-primary btn-save'>保存</button>
+                </div>
+                <!-- 表单 -->
+                <div class="form-inline form-section">
+                    <form class='js-form'>
+                        <div class="row">
+                            <div class='col-md-12'>
+                                <h3>
+                                    <i class='fa fa-minus-square-o fa-lg'></i> 管理信息</h3>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class="form-group col-md-3">
+                                    <label for="">主账号</label>
+                                    <input type="text" class="form-control" name="">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="">客户id</label>
+                                    <input type="text" class='form-control'>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="">客户来源</label>
+                                    <input type="text" class='form-control'>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="">未登录天数</label>
+                                    <input type="text" class='form-control'>
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class="form-group col-md-3">
+                                    <label for="">领用人</label>
+                                    <input type="text" class='form-control'>
+                                </div>
+                                <div class="fcol-md-4">
+                                    <label for="">未回访天数</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class='col-md-12'>
+                                <h3>
+                                    <i class='fa fa-minus-square-o fa-lg'></i> 客户基本信息</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group col-md-6">
+                                    <label for="">公司名称</label>
+                                    <input type="text" class='form-control'>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="">品牌名称</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class="form-group col-md-4">
+                                    <label>城市</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value="1">市</option>
+                                    </select>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value="1">区</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>地址</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class="form-group col-md-4">
+                                    <label>邮箱</label>
+                                    <input type="text" class='form-control'>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=''>固定电话</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class='col-md-12'>
+                                <h3>
+                                    <i class='fa fa-minus-square-o fa-lg'></i> 客户行业属性</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class='form-group col-md-4'>
+                                    <label for="">企业类型</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                                <div class='form-group col-md-4'>
+                                    <label for="" class='wid-85'>行业类型</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                                <div class='form-group col-md-4'>
+                                    <label for="" class='wid-85'>贸易类型</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>内销</option>
+                                        <option value='1'>外销</option>
+                                        <option value='1'>内外销</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class='form-group col-md-4'>
+                                    <label for="">性别</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                                <div class='form-group col-md-4'>
+                                    <div>
+                                        <label for="">风格</label>
+                                        <select name="checks" id="" class="form-control">
+                                            <option value='1'>省</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class='form-group col-md-4'>
+                                    <label for="">重点开发季节</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                                <div class='form-group col-md-4'>
+                                    <label for="">重点单品</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class='form-group col-md-4'>
+                                    <label for="">材质</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                                <div class='form-group col-md-4'>
+                                    <label for="">面料工艺</label>
+                                    <select name="checks" id="" class="form-control">
+                                        <option value='1'>省</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class='col-md-12'>
+                                <h3>
+                                    <i class='fa fa-minus-square-o fa-lg'></i> 客服信息</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group col-md-4">
+                                    <div>
+                                        <label for="">客户关注项</label>
+                                        <input type="text" class='form-control' v-model='visit.attention'>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <div>
+                                        <label for="">关注项备注</label>
+                                        <textarea name="" id="" cols="70%" rows="1" class='form-control' v-model='visit.remark'></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group col-md-4">
+                                    <label for="">服务阶段</label>
+                                    <select name="" id="" class='form-control' v-model='material.stage'>
+                                        <option value="1">新客期</option>
+                                        <option value="2">服务期</option>
+                                        <option value="3">流转期</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">客户情况</label>
+                                    <select name="" id="" class='form-control' v-model='material.state'>
+                                        <option value="1">Z(正常)</option>
+                                        <option value="2">Y(疑难客户)</option>
+                                        <option value="3">Z(长期不登录客户)</option>
+                                        <option value="4">Z(失联)</option>
+                                        <option value="5">Z(转行/倒闭)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group col-md-4">
+                                    <label for="">发票项</label>
+                                    <select name="" id="" class='form-control' v-model='material.invoice'>
+                                        <option value="1">提前开票</option>
+                                        <option value="2">暂缓开票</option>
+                                        <option value="3">普通发票</option>
+                                        <option value="4">专用发票</option>
+                                        <option value="5">不需要发票</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">网站权限</label>
+                                    <input type="text" value='全网' class="form-control" v-model='material.limit'>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class='col-md-1'>赠品内容</label>
+                                <label class='col-md-1'>快反应系列</label>
+                                <div class="col-md-9">
+                                    <label class='col-md-2'>APM男装</label>
+                                    <div class='col-md-6'>
+                                        <label for="">最后一本到期事件</label>
+                                        <input type="text" value='2018-12-15' class="form-control" disabled>
+                                    </div>
+                                    <div class='col-md-3'>
+                                        <label for="">总数</label>
+                                        <input type="text" value='24' class="form-control" disabled>
+                                    </div>
+                                    <label class='col-md-2'>APM女装</label>
+                                    <div class='col-md-6'>
+                                        <label for="">最后一本到期事件</label>
+                                        <input type="text" value='2018-12-15' class="form-control" disabled>
+                                    </div>
+                                    <div class='col-md-3'>
+                                        <label for="">总数</label>
+                                        <input type="text" value='24' class="form-control" disabled>
+                                    </div>
+                                    <label class='col-md-2'>APM童装</label>
+                                    <div class='col-md-6'>
+                                        <label for="">最后一本到期事件</label>
+                                        <input type="text" value='2018-12-15' class="form-control" disabled>
+                                    </div>
+                                    <div class='col-md-3'>
+                                        <label for="">总数</label>
+                                        <input type="text" value='24' class="form-control" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                </form>
                 <div class="row">
-                    <div class="col-md-12" align='right'>
-                        <button type='button' class='btn btn-default btn-save'>保存</button>
-                        <button type='button' class='btn btn-default btn-close'>关闭</button>
+                    <div class='col-md-12'>
+                        <button type='button' class='open'></button>
+                        <label>账户信息</label>
                     </div>
-                    <div class="manage-wrap">
-                        <div class='col-md-12'>
-                            <button class='open'></button>
-                            <span>管理信息</span>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-3">
-                                <label for="">姓名</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">所属客户</label>
-                                <a href="javascript:;">上海摹雪服装有限公司</a>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="">是否主联系人</label>
-                                <select name="" id="">
-                                    <option value="">是</option>
-                                    <option value="">否</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-3">
-                                <label for="">职务</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">角色</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="">客户状态</label>
-                                <select name="" id="">
-                                    <option value="">在职</option>
-                                    <option value="">离职</option>
-                                    <option value="">休假</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-3">
-                                <label for="">移动电话</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">工作电话</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="">分机号</label>
-                                <input type="text" value='100'>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-3">
-                                <label for="">QQ</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">微信号</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="">是否添加微信</label>
-                                <select name="" id="">
-                                    <option value="">是</option>
-                                    <option value="">否</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="list-section">
+                        <table class="table table-condensed table-bordered table-hover">
+                            <thead>
+                                <tr class="warning">
+                                    <th>账号</th>
+                                    <th>类型</th>
+                                    <th>手机号</th>
+                                    <th>未登录天数</th>
+                                    <th>注册时间</th>
+                                    <th>最后登录时间</th>
+                                    <th>修改密码时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align='center' v-for='item in list'>
+                                    <td>{{ item.account }}</td>
+                                    <td>{{ item.stage }}</td>
+                                    <td>{{ item.phone }}</td>
+                                    <td>{{ item.unline }}</td>
+                                    <td>{{ item.register }}</td>
+                                    <td>{{ item.lastlogin}}</td>
+                                    <td>{{ item.code }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
 
-                    <div class="service-wrap">
-                        <div class='col-md-12'>
-                            <button class='open'></button>
-                            <span>管理信息</span>
-                        </div>
-                        <div class="col-md-12">
-                            <div class='col-md-3'>
-                                <label for="" class='col-md-4'>客户印象</label>
-                                <select name="" id="" class='col-md-8'>
-                                    <option value="">好</option>
-                                    <option value="">好</option>
-                                    <option value="">好</option>
-                                </select>
-                            </div>
-                            <div class='col-md-9'>
-                                <label for="" class='col-md-2 text-right'>客户关注度</label>
-                                <input type="text" class='col-md-3'>
-                                <label class='col-md-2 text-right'>客户关注项备注</label>
-                                <textarea class='col-md-5' name="" id="" cols="30" rows="1"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="col-md-2">
-                                <label for="">多产品</label>
-
-                                <input type="checkbox">
-                                <span for="">APM</span>
-                            </div>
-                            <div class="col-md-2">
-                                <select name="" id="">
-                                    <option value="">ffdshfjsh</option>
-                                </select>
-                            </div>
-                            <div class="col-md-1">
-                                <input type="checkbox">
-                                <label for="">书籍</label>
-                            </div>
-                            <div class="col-md-2">
-                                <select name="" id="">
-                                    <option value="">ffdshfjsh</option>
-                                </select>
-                            </div>
-                            <div class="col-md-1">
-                                <input type="checkbox">
-                                <label for="">总裁班</label>
-                            </div>
-                            <div class="col-md-2">
-                                <select name="" id="">
-                                    <option value="">ffdshfjsh</option>
-                                </select>
-                            </div>
-
-                        </div>
+                <div class="row">
+                    <div class='col-md-12'>
+                        <button type='button' class='open'></button>
+                        <label>账户信息</label>
+                    </div>
+                    <div class="list-section">
+                        <table class="table table-condensed table-bordered table-hover">
+                            <thead>
+                                <tr class="warning">
+                                    <th>创建日期</th>
+                                    <th>服务对象</th>
+                                    <th>手机号</th>
+                                    <th>服务方式</th>
+                                    <th>联络类型</th>
+                                    <th>联络结果</th>
+                                    <th>用户印象</th>
+                                    <th>服务内容</th>
+                                    <th>服务详情</th>
+                                    <th>联络人</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align='center' v-for='item in record'>
+                                    <td>{{ item.created }}</td>
+                                    <td>{{ item.session }}</td>
+                                    <td>{{ item.tel }}</td>
+                                    <td>{{ item.selation }}</td>
+                                    <td>{{ item.stage }}</td>
+                                    <td>{{ item.result }}</td>
+                                    <td>{{ item.impress }}</td>
+                                    <td>{{ item.content }}</td>
+                                    <td>{{ item.detail }}</td>
+                                    <td>{{ item.contact }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="test1"></div>
                     </div>
                 </div>
             </div>
-
-
+            <footer>
+                <p>Copyright &copy; 2016.Company name All rights reserved.More Templates
+                    <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
+                    <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+                </p>
+            </footer>
+            <!-- /. PAGE WRAPPER  -->
         </div>
-        <footer>
-            <p>Copyright &copy; 2016.Company name All rights reserved.More Templates
-                <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
-                <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-            </p>
-        </footer>
     </div>
-    <!-- /. PAGE WRAPPER  -->
-    </div>
-
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
 

@@ -111,7 +111,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         });
                     });
                 },
-                expertFunc:function(){
+                expertFunc:function(){                                     //高级筛选
                     var layer = layui.layer;
                     layer.open({
                         type:0,
@@ -125,7 +125,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         }
                     });     
                 },
-                assignFunc:function(){
+                assignFunc:function(){                                  //批量指派
                         var layer = layui.layer;
                         layer.open({
                             type:0,
@@ -139,7 +139,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                             }
                         });          
                 },
-                failFunc:function(){
+                failFunc:function(){                                //批量未通过
                     var layer = layui.layer;
                     layer.open({
                         type:0,
@@ -154,7 +154,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         }
                     });     
                 },
-                passFunc:function(){
+                passFunc:function(){                            //批量通过
                     var layer = layui.layer;
                     layer.open({
                         type:0,
@@ -168,7 +168,7 @@ require(['vue', 'msg', 'layui'], function (Vue, msg) {
                         }
                     });     
                 },
-                endFunc:function(){
+                endFunc:function(){                              //批量终止
                     var layer = layui.layer;
                     layer.open({
                         type:0,

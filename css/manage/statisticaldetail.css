@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+<<<<<<< HEAD
 .dis-bottom {margin-bottom:10px;}
 .assign-selcet {width:80%;}
 .dialog-batch {display:none;}
@@ -9,3 +10,10 @@
 .expert .form-control { display: inline-block;width:38%;}
 .layui-layer-btn .layui-layer-btn1{background-color: #1E9FFF;color:#fff;border: none;}
 .dis-top{margin-top: 20px;}
+=======
+
+.page-name{padding: 8px 15px 15px;margin-bottom: 15px;border-bottom: 1px solid #aaa;}
+.form-section>div{margin-bottom: 20px;}
+.form-section label{margin-right: 8px}
+
+>>>>>>> 22750ec72cc4678b18d15f8b6d42354c9386d7fd

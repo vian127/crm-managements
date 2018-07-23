@@ -6,7 +6,6 @@
 require.config({
   // baseUrl: "file:///E:/myWorks/github/cooperation/crm-managements/js",
   baseUrl: "file:///E:/project/works/crm-product/js",
-  // baseUrl: " file:///E:/crm-managements/js",
   urlArgs: "r=" + (new Date()).getTime(),
   // urlArgs:"t="+static_change_time,
   paths: {
